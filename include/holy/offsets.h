@@ -1,0 +1,146 @@
+/*
+ * Copyright 2025 Felix P. A. Gillberg HolyBooter
+ * SPDX-License-Identifier: GPL-2.0
+ */
+
+#ifndef OFFSETS_HEADER
+#define OFFSETS_HEADER	1
+
+/* The offset of holy_COMPRESSED_SIZE.  */
+#define holy_DECOMPRESSOR_I386_PC_COMPRESSED_SIZE	0x08
+
+/* The offset of holy_COMPRESSED_SIZE.  */
+#define holy_DECOMPRESSOR_I386_PC_UNCOMPRESSED_SIZE	0x0c
+
+/* Offset of reed_solomon_redundancy.  */
+#define holy_KERNEL_I386_PC_REED_SOLOMON_REDUNDANCY	0x10
+
+/* Offset of field holding no reed solomon length.  */
+#define holy_KERNEL_I386_PC_NO_REED_SOLOMON_LENGTH      0x14
+
+#define holy_DECOMPRESSOR_I386_PC_BOOT_DEVICE           0x18
+
+#define holy_DECOMPRESSOR_I386_PC_MAX_DECOMPRESSOR_SIZE (0x9000-0x8200)
+
+/* The segment where the kernel is loaded.  */
+#define holy_BOOT_I386_PC_KERNEL_SEG	0x800
+
+#define holy_KERNEL_I386_PC_LINK_ADDR  0x9000
+
+/* The upper memory area (starting at 640 kiB).  */
+#define holy_MEMORY_I386_PC_UPPER		0xa0000
+#define holy_MEMORY_I386_QEMU_UPPER		holy_MEMORY_I386_PC_UPPER
+
+/* The offset of holy_CORE_ENTRY_ADDR.  */
+#define holy_BOOT_I386_QEMU_CORE_ENTRY_ADDR	0x4
+
+/* The offset of holy_CORE_ENTRY_ADDR.  */
+#define holy_KERNEL_I386_QEMU_CORE_ENTRY_ADDR	0x8
+
+#define holy_KERNEL_I386_QEMU_LINK_ADDR         0x8200
+
+/* The offset of holy_TOTAL_MODULE_SIZE.  */
+#define holy_KERNEL_SPARC64_IEEE1275_TOTAL_MODULE_SIZE	0x8
+#define holy_KERNEL_ARM_STACK_SIZE 0x40000
+
+#define holy_BOOT_SPARC64_IEEE1275_LIST_SIZE	12
+
+#define holy_BOOT_SPARC64_IEEE1275_IMAGE_ADDRESS	0x4400
+#define holy_KERNEL_SPARC64_IEEE1275_LINK_ADDR 0x4400
+
+#define holy_KERNEL_POWERPC_IEEE1275_LINK_ALIGN 4
+#define holy_KERNEL_POWERPC_IEEE1275_LINK_ADDR 0x200000
+
+#define holy_KERNEL_MIPS_LOONGSON_LINK_ADDR         0x80200000
+
+#define holy_KERNEL_MIPS_LOONGSON_LINK_ALIGN  32
+
+#define holy_DECOMPRESSOR_MIPS_LOONGSON_COMPRESSED_SIZE          0x8
+#define holy_DECOMPRESSOR_MIPS_LOONGSON_UNCOMPRESSED_SIZE        0xc
+#define holy_DECOMPRESSOR_MIPS_LOONGSON_UNCOMPRESSED_ADDR        0x10
+
+#define holy_KERNEL_MIPS_LOONGSON_TOTAL_MODULE_SIZE	0x08
+
+#define holy_KERNEL_MIPS_QEMU_MIPS_LINK_ADDR         0x80200000
+#define holy_KERNEL_MIPS_QEMU_MIPS_LINK_ALIGN  32
+#define holy_DECOMPRESSOR_MIPS_QEMU_MIPS_COMPRESSED_SIZE          0x8
+#define holy_DECOMPRESSOR_MIPS_QEMU_MIPS_UNCOMPRESSED_SIZE        0xc
+#define holy_DECOMPRESSOR_MIPS_QEMU_MIPS_UNCOMPRESSED_ADDR        0x10
+#define holy_KERNEL_MIPS_QEMU_MIPS_TOTAL_MODULE_SIZE	0x08
+
+#define holy_KERNEL_MIPS_ARC_LINK_ADDR         0x88200000
+#define holy_KERNEL_MIPSEL_ARC_LINK_ADDR         0x80700000
+#define holy_KERNEL_MIPS_ARC_LINK_ALIGN  32
+
+#define holy_DECOMPRESSOR_MIPS_ARC_COMPRESSED_SIZE          0x8
+#define holy_DECOMPRESSOR_MIPS_ARC_UNCOMPRESSED_SIZE        0xc
+#define holy_DECOMPRESSOR_MIPS_ARC_UNCOMPRESSED_ADDR        0x10
+
+#define holy_KERNEL_MIPS_ARC_TOTAL_MODULE_SIZE	0x08
+
+#define holy_KERNEL_I386_COREBOOT_LINK_ADDR	0x8200
+#define holy_KERNEL_I386_COREBOOT_MODULES_ADDR  0x100000
+
+#define holy_KERNEL_I386_IEEE1275_LINK_ADDR	0x10000
+
+#define holy_KERNEL_I386_IEEE1275_MOD_ALIGN	0x1000
+#define holy_KERNEL_I386_COREBOOT_MOD_ALIGN	0x1
+#define holy_KERNEL_I386_MULTIBOOT_MOD_ALIGN	holy_KERNEL_I386_COREBOOT_MOD_ALIGN
+
+#define holy_KERNEL_X86_64_XEN_MOD_ALIGN	0x8
+#define holy_KERNEL_I386_XEN_MOD_ALIGN	0x8
+
+/* Non-zero value is only needed for PowerMacs.  */
+#define holy_KERNEL_X86_64_XEN_MOD_GAP 0x0
+#define holy_KERNEL_I386_XEN_MOD_GAP 0x0
+#define holy_KERNEL_I386_IEEE1275_MOD_GAP 0x0
+#define holy_KERNEL_I386_COREBOOT_MOD_GAP 0x0
+#define holy_KERNEL_SPARC64_IEEE1275_MOD_GAP 0x0
+#define holy_KERNEL_ARM_UBOOT_MOD_GAP 0x0
+
+#define holy_KERNEL_POWERPC_IEEE1275_MOD_ALIGN 0x1000
+#define holy_KERNEL_SPARC64_IEEE1275_LOG_MOD_ALIGN 3
+#define holy_KERNEL_SPARC64_IEEE1275_MOD_ALIGN (1 << holy_KERNEL_SPARC64_IEEE1275_LOG_MOD_ALIGN)
+
+#define holy_KERNEL_MIPS_LOONGSON_MOD_ALIGN 0x1
+#define holy_KERNEL_MIPS_ARC_MOD_ALIGN 0x1
+#define holy_KERNEL_MIPS_QEMU_MIPS_MOD_ALIGN 0x1
+
+#define holy_KERNEL_ARM_UBOOT_MOD_ALIGN 	0x8
+#define holy_KERNEL_ARM_UBOOT_TOTAL_MODULE_SIZE	0x4
+
+/* Minimal gap between _end and the start of the modules.  It's a hack
+   for PowerMac to prevent "CLAIM failed" error.  The real fix is to
+   rewrite holy-mkimage to generate valid ELF files.  */
+#define holy_KERNEL_POWERPC_IEEE1275_MOD_GAP 0x8000
+
+#ifdef holy_MACHINE
+#define holy_OFFSETS_CONCAT_(a,b,c) a ## b ## c
+#define holy_OFFSETS_CONCAT(a,b,c) holy_OFFSETS_CONCAT_(a,b,c)
+#define holy_KERNEL_MACHINE_MOD_ALIGN holy_OFFSETS_CONCAT (holy_KERNEL_, holy_MACHINE, _MOD_ALIGN)
+#define holy_KERNEL_MACHINE_MOD_GAP holy_OFFSETS_CONCAT (holy_KERNEL_, holy_MACHINE, _MOD_GAP)
+#define holy_KERNEL_MACHINE_TOTAL_MODULE_SIZE holy_OFFSETS_CONCAT (holy_KERNEL_, holy_MACHINE, _TOTAL_MODULE_SIZE)
+
+#define holy_BOOT_MACHINE_KERNEL_SEG holy_OFFSETS_CONCAT (holy_BOOT_, holy_MACHINE, _KERNEL_SEG)
+#define holy_MEMORY_MACHINE_UPPER holy_OFFSETS_CONCAT (holy_MEMORY_, holy_MACHINE, _UPPER)
+#if defined (holy_MACHINE_ARC) && defined (holy_CPU_MIPSEL)
+#define holy_MACHINE_LINK_ADDR holy_KERNEL_MIPSEL_ARC_LINK_ADDR
+#else
+#define holy_MACHINE_LINK_ADDR holy_OFFSETS_CONCAT (holy_KERNEL_, holy_MACHINE, _LINK_ADDR)
+#endif
+
+#define holy_DECOMPRESSOR_MACHINE_COMPRESSED_SIZE holy_OFFSETS_CONCAT (holy_DECOMPRESSOR_, holy_MACHINE, _COMPRESSED_SIZE)
+#define holy_DECOMPRESSOR_MACHINE_UNCOMPRESSED_SIZE holy_OFFSETS_CONCAT (holy_DECOMPRESSOR_, holy_MACHINE, _UNCOMPRESSED_SIZE)
+#define holy_DECOMPRESSOR_MACHINE_UNCOMPRESSED_ADDR holy_OFFSETS_CONCAT (holy_DECOMPRESSOR_, holy_MACHINE, _UNCOMPRESSED_ADDR)
+#endif
+
+#ifndef ASM_FILE
+struct holy_pc_bios_boot_blocklist
+{
+  holy_uint64_t start;
+  holy_uint16_t len;
+  holy_uint16_t segment;
+} holy_PACKED;
+#endif
+
+#endif

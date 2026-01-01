@@ -1,0 +1,1743 @@
+bison -d -p holy_script_yy -b holy_script ./holy-core/script/parser.y
+flex -o holy_script.yy.c --header-file=holy_script.yy.h ./holy-core/script/yylex.l
+./holy-core/script/parser.y:73.1-12: warning: deprecated directive: ‘%pure-parser’, use ‘%define api.pure’ [-Wdeprecated]
+   73 | %pure-parser
+      | ^~~~~~~~~~~~
+      | %define api.pure
+gcc -E -DHAVE_CONFIG_H -I.  -Wall -W -Dholy_UTIL=1 -D_FILE_OFFSET_BITS=64 -I./include -Dholy_FILE=\"util/holy-fstest.c\" -I. -I. -I. -I. -I./include -I./include -I./holy-core/lib/libgcrypt-holy/src/ -I./holy-core/gnulib -I./holy-core/gnulib  -DDEBUG -DGRUB_DEBUG -DGRUB_UTIL=1 -D_FILE_OFFSET_BITS=64 \
+  -D'holy_MOD_INIT(x)=@MARKER@x@' util/holy-fstest.c holy-core/kern/emu/hostfs.c holy-core/disk/host.c holy-core/osdep/init.c > holy_fstest.pp || (rm -f holy_fstest.pp; exit 1)
+In file included from util/holy-fstest.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from util/holy-fstest.c:8:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/fs.h:11,
+                 from holy-core/kern/emu/hostfs.c:8:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/util/misc.h:18,
+                 from holy-core/kern/emu/hostfs.c:14:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+./holy-core/script/parser.y: warning: fix-its can be applied.  Rerun with option '--update'. [-Wother]
+gcc -E -DHAVE_CONFIG_H -I.  -Wall -W -Dholy_UTIL=1 -D_FILE_OFFSET_BITS=64 -I./include -Dholy_FILE=\"holy_script.tab.h\" -I. -I. -I. -I. -I./include -I./include -I./holy-core/lib/libgcrypt-holy/src/  -I./holy-core/lib/minilzo -I./holy-core/lib/xzembed -DMINILZO_HAVE_CONFIG_H -Wall -W -Dholy_UTIL=1 -D_FILE_OFFSET_BITS=64 -I./include -Dholy_FILE=\"holy_script.tab.h\" -I. -I. -I. -I. -I./include -I./include -I./holy-core/lib/libgcrypt-holy/src/  -I./holy-core/gnulib -I./holy-core/gnulib -DDEBUG -DGRUB_DEBUG -DGRUB_UTIL=1 -D_FILE_OFFSET_BITS=64 \
+  -D'holy_MOD_INIT(x)=@MARKER@x@' holy_script.tab.h holy_script.yy.h holy-core/commands/blocklist.c holy-core/commands/macbless.c holy-core/commands/xnu_uuid.c holy-core/commands/testload.c holy-core/commands/ls.c holy-core/disk/dmraid_nvidia.c holy-core/disk/loopback.c holy-core/disk/lvm.c holy-core/disk/mdraid_linux.c holy-core/disk/mdraid_linux_be.c holy-core/disk/mdraid1x_linux.c holy-core/disk/raid5_recover.c holy-core/disk/raid6_recover.c holy-core/font/font.c holy-core/gfxmenu/font.c holy-core/normal/charset.c holy-core/video/fb/fbblit.c holy-core/video/fb/fbutil.c holy-core/video/fb/fbfill.c holy-core/video/fb/video_fb.c holy-core/video/video.c holy-core/video/capture.c holy-core/video/colors.c holy-core/unidata.c holy-core/io/bufio.c holy-core/fs/affs.c holy-core/fs/afs.c holy-core/fs/bfs.c holy-core/fs/btrfs.c holy-core/fs/cbfs.c holy-core/fs/cpio.c holy-core/fs/cpio_be.c holy-core/fs/odc.c holy-core/fs/newc.c holy-core/fs/ext2.c holy-core/fs/fat.c holy-core/fs/exfat.c holy-core/fs/fshelp.c holy-core/fs/hfs.c holy-core/fs/hfsplus.c holy-core/fs/hfspluscomp.c holy-core/fs/iso9660.c holy-core/fs/jfs.c holy-core/fs/minix.c holy-core/fs/minix2.c holy-core/fs/minix3.c holy-core/fs/minix_be.c holy-core/fs/minix2_be.c holy-core/fs/minix3_be.c holy-core/fs/nilfs2.c holy-core/fs/ntfs.c holy-core/fs/ntfscomp.c holy-core/fs/reiserfs.c holy-core/fs/romfs.c holy-core/fs/sfs.c holy-core/fs/squash4.c holy-core/fs/tar.c holy-core/fs/udf.c holy-core/fs/ufs2.c holy-core/fs/ufs.c holy-core/fs/ufs_be.c holy-core/fs/xfs.c holy-core/fs/zfs/zfscrypt.c holy-core/fs/zfs/zfs.c holy-core/fs/zfs/zfsinfo.c holy-core/fs/zfs/zfs_lzjb.c holy-core/fs/zfs/zfs_lz4.c holy-core/fs/zfs/zfs_sha256.c holy-core/fs/zfs/zfs_fletcher.c holy-core/lib/envblk.c holy-core/lib/hexdump.c holy-core/lib/LzFind.c holy-core/lib/LzmaEnc.c holy-core/lib/crc.c holy-core/lib/adler32.c holy-core/lib/crc64.c holy-core/normal/datetime.c holy-core/normal/misc.c holy-core/partmap/acorn.c holy-core/partmap/amiga.c holy-core/partmap/apple.c holy-core/partmap/sun.c holy-core/partmap/plan.c holy-core/partmap/dvh.c holy-core/partmap/sunpc.c holy-core/partmap/bsdlabel.c holy-core/partmap/dfly.c holy-core/script/function.c holy-core/script/lexer.c holy-core/script/main.c holy-core/script/script.c holy-core/script/argv.c holy-core/io/gzio.c holy-core/io/xzio.c holy-core/io/lzopio.c holy-core/kern/ia64/dl_helper.c holy-core/kern/arm/dl_helper.c holy-core/kern/arm64/dl_helper.c holy-core/lib/minilzo/minilzo.c holy-core/lib/xzembed/xz_dec_bcj.c holy-core/lib/xzembed/xz_dec_lzma2.c holy-core/lib/xzembed/xz_dec_stream.c util/misc.c holy-core/kern/command.c holy-core/kern/device.c holy-core/kern/disk.c holy-core/lib/disk.c util/getroot.c holy-core/osdep/unix/getroot.c holy-core/osdep/getroot.c holy-core/osdep/devmapper/getroot.c holy-core/osdep/relpath.c holy-core/kern/emu/hostdisk.c holy-core/osdep/devmapper/hostdisk.c holy-core/osdep/hostdisk.c holy-core/osdep/unix/hostdisk.c holy-core/osdep/exec.c holy-core/osdep/sleep.c holy-core/osdep/password.c holy-core/kern/emu/misc.c holy-core/kern/emu/mm.c holy-core/kern/env.c holy-core/kern/err.c holy-core/kern/file.c holy-core/kern/fs.c holy-core/kern/list.c holy-core/kern/misc.c holy-core/kern/partition.c holy-core/lib/crypto.c holy-core/disk/luks.c holy-core/disk/geli.c holy-core/disk/cryptodisk.c holy-core/disk/AFSplitter.c holy-core/lib/pbkdf2.c holy-core/commands/extcmd.c holy-core/lib/arg.c holy-core/disk/ldm.c holy-core/disk/diskfilter.c holy-core/partmap/gpt.c holy-core/partmap/msdos.c holy-core/fs/proc.c holy-core/fs/archelp.c > libholy.pp || (rm -f libholy.pp; exit 1)
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/disk/host.c:9:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/util/misc.h:16,
+                 from holy-core/osdep/basic/init.c:9,
+                 from holy-core/osdep/init.c:9:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/util/misc.h:18:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Makefile:14115: holy_fstest.pp] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/commands/blocklist.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/command.h:12,
+                 from holy-core/commands/macbless.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/commands/xnu_uuid.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/commands/testload.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/commands/ls.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/disk/dmraid_nvidia.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/disk/loopback.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/disk/lvm.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/disk/lvm.c:16:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/disk/mdraid_linux.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/disk/mdraid_linux.c:6,
+                 from holy-core/disk/mdraid_linux_be.c:7:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/disk/mdraid1x_linux.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/disk/raid5_recover.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/disk/raid6_recover.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/file.h:9,
+                 from ./include/holy/bufio.h:9,
+                 from holy-core/font/font.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from ./include/holy/bufio.h:9,
+                 from holy-core/gfxmenu/font.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/charset.h:9,
+                 from holy-core/normal/charset.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/video_fb.h:10,
+                 from holy-core/video/fb/fbblit.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/fbutil.h:9,
+                 from holy-core/video/fb/fbutil.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/video_fb.h:10,
+                 from holy-core/video/fb/fbfill.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/video.h:10,
+                 from holy-core/video/fb/video_fb.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/video.h:10,
+                 from holy-core/video/video.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/video.h:10,
+                 from holy-core/video/capture.c:8:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/video/colors.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/unicode.h:9,
+                 from holy-core/unidata.c:1:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/io/bufio.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/affs.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/bfs.c:7,
+                 from holy-core/fs/afs.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/bfs.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/btrfs.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/fs/cbfs.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/fs/cpio.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/fs/cpio_be.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/fs/odc.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/fs/newc.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/ext2.c:27:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/fs.h:11,
+                 from holy-core/fs/fat.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/fs.h:11,
+                 from holy-core/fs/fat.c:6,
+                 from holy-core/fs/exfat.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/mm.h:9,
+                 from holy-core/fs/fshelp.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/hfs.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/hfsplus.c:8:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/hfsplus.h:6,
+                 from holy-core/fs/hfspluscomp.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/iso9660.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/jfs.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/minix.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/minix.c:7,
+                 from holy-core/fs/minix2.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/minix.c:7,
+                 from holy-core/fs/minix3.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/minix.c:7,
+                 from holy-core/fs/minix_be.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/minix.c:7,
+                 from holy-core/fs/minix2_be.c:8:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/minix.c:7,
+                 from holy-core/fs/minix3_be.c:8:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/nilfs2.c:12:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/ntfs.c:8:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/ntfscomp.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/reiserfs.c:13:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+holy-core/fs/reiserfs.c:41: warning: "S_IFLNK" redefined
+   41 | #define S_IFLNK 0xA000
+      | 
+In file included from ./include/holy/osdep/hostfile_unix.h:17,
+                 from ./include/holy/osdep/hostfile.h:11,
+                 from ./include/holy/emu/hostfile.h:12,
+                 from ./include/holy/emu/config.h:11:
+/usr/include/fcntl.h:89: note: this is the location of the previous definition
+   89 | #  define S_IFLNK       __S_IFLNK
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/romfs.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/sfs.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/squash4.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/fs/tar.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/udf.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/ufs.c:7,
+                 from holy-core/fs/ufs2.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/ufs.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/ufs.c:7,
+                 from holy-core/fs/ufs_be.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/xfs.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/zfs/zfscrypt.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/zfs/zfs.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/disk.h:13,
+                 from ./include/holy/zfs/zfs.h:10,
+                 from holy-core/fs/zfs/zfsinfo.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/zfs/zfs_lzjb.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/mm.h:9,
+                 from holy-core/fs/zfs/zfs_lz4.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/zfs/zfs_sha256.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/file.h:9,
+                 from holy-core/fs/zfs/zfs_fletcher.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/lib/envblk.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/lib/hexdump.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/lib/crc.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/lib/adler32.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/lib/crc64.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/datetime.h:9,
+                 from holy-core/normal/datetime.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/term.h:57,
+                 from ./include/holy/normal.h:9,
+                 from holy-core/normal/misc.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/partmap/acorn.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/partmap/amiga.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/partmap/apple.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from holy-core/partmap/sun.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from holy-core/partmap/plan.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from holy-core/partmap/dvh.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from holy-core/partmap/sunpc.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from holy-core/partmap/bsdlabel.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/partmap/bsdlabel.c:18:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/partmap/dfly.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/script/function.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/parser.h:9,
+                 from holy-core/script/lexer.c:8:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/script/main.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/script/script.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/mm.h:9,
+                 from holy-core/script/argv.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/io/gzio.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/mm.h:9,
+                 from holy-core/io/xzio.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/mm.h:9,
+                 from holy-core/io/lzopio.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/kern/ia64/dl_helper.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/kern/arm/dl_helper.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/kern/arm64/dl_helper.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/lib/xzembed/xz.h:12,
+                 from holy-core/lib/xzembed/xz_config.h:47,
+                 from holy-core/lib/xzembed/xz_private.h:14,
+                 from holy-core/lib/xzembed/xz_dec_bcj.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/lib/xzembed/xz.h:12,
+                 from holy-core/lib/xzembed/xz_config.h:47,
+                 from holy-core/lib/xzembed/xz_private.h:14,
+                 from holy-core/lib/xzembed/xz_dec_lzma2.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/lib/xzembed/xz.h:12,
+                 from holy-core/lib/xzembed/xz_config.h:47,
+                 from holy-core/lib/xzembed/xz_dec_stream.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/kernel.h:9,
+                 from util/misc.c:19:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from util/misc.c:23:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/mm.h:9,
+                 from holy-core/kern/command.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/kern/device.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/kern/disk.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/lib/disk.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/util/misc.h:16,
+                 from util/getroot.c:24:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/util/misc.h:18:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/util/misc.h:16,
+                 from holy-core/osdep/unix/getroot.c:24:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/util/misc.h:18:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from holy-core/osdep/linux/getroot.c:31,
+                 from holy-core/osdep/getroot.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/util/misc.h:18,
+                 from holy-core/osdep/linux/getroot.c:35:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/emu/getroot.h:9,
+                 from holy-core/osdep/devmapper/getroot.c:9:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/util/misc.h:18,
+                 from holy-core/osdep/devmapper/getroot.c:39:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/util/misc.h:16,
+                 from holy-core/osdep/unix/relpath.c:16,
+                 from holy-core/osdep/relpath.c:11:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/util/misc.h:18:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/kern/emu/hostdisk.c:8:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/kern/emu/hostdisk.c:13:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/osdep/devmapper/hostdisk.c:8:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/osdep/devmapper/hostdisk.c:13:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/osdep/linux/hostdisk.c:8,
+                 from holy-core/osdep/hostdisk.c:7:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/osdep/linux/hostdisk.c:13:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/osdep/unix/hostdisk.c:8:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/osdep/unix/hostdisk.c:13:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from holy-core/osdep/unix/exec.c:9,
+                 from holy-core/osdep/exec.c:7:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/util/misc.h:18,
+                 from holy-core/osdep/unix/exec.c:14:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/time.h:9,
+                 from holy-core/osdep/unix/sleep.c:7,
+                 from holy-core/osdep/sleep.c:9:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/crypto.h:10,
+                 from holy-core/osdep/unix/password.c:6,
+                 from holy-core/osdep/password.c:9:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/mm.h:9,
+                 from holy-core/kern/emu/misc.c:17:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/kern/emu/misc.c:24:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from holy-core/kern/emu/mm.c:8:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/env.h:11,
+                 from holy-core/kern/env.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/kern/err.c:7:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/kern/file.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/kern/fs.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/kern/list.c:7:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/kern/misc.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/kern/partition.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/util/misc.h:18,
+                 from holy-core/kern/partition.c:13:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/crypto.h:10,
+                 from holy-core/lib/crypto.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/disk.h:13,
+                 from ./include/holy/cryptodisk.h:9,
+                 from holy-core/disk/luks.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/disk.h:13,
+                 from ./include/holy/cryptodisk.h:9,
+                 from holy-core/disk/geli.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/util/misc.h:18,
+                 from holy-core/disk/geli.c:22:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/disk.h:13,
+                 from ./include/holy/cryptodisk.h:9,
+                 from holy-core/disk/cryptodisk.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/util/misc.h:18,
+                 from holy-core/disk/cryptodisk.c:846:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/crypto.h:10,
+                 from holy-core/disk/AFSplitter.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/crypto.h:10,
+                 from holy-core/lib/pbkdf2.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/mm.h:9,
+                 from holy-core/commands/extcmd.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from holy-core/lib/arg.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/misc.h:10:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/disk/ldm.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/disk/ldm.c:17:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/dl.h:15,
+                 from holy-core/disk/diskfilter.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/util/misc.h:18,
+                 from holy-core/disk/diskfilter.c:15:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/disk.h:13,
+                 from holy-core/partmap/gpt.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from holy-core/partmap/msdos.c:6:
+./include/holy/misc.h:18: warning: "holy_LONG_MAX" redefined
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/dl.h:12:
+./include/holy/types.h:130: note: this is the location of the previous definition
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from holy-core/partmap/msdos.c:20:
+./include/holy/emu/misc.h:14:10: fatal error: gcrypt/gcrypt.h: No such file or directory
+   14 | #include <gcrypt/gcrypt.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ./include/holy/procfs.h:10,
+                 from holy-core/fs/proc.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+In file included from ./include/holy/fs.h:11,
+                 from ./include/holy/archelp.h:9,
+                 from holy-core/fs/archelp.c:6:
+./include/holy/types.h:130: warning: "holy_LONG_MAX" redefined
+  130 | # define holy_LONG_MAX 9223372036854775807L
+      | 
+In file included from ./include/holy/dl.h:15,
+                 from ./include/holy/partition.h:9,
+                 from ./include/holy/emu/config.h:10,
+                 from ./include/holy/types.h:9:
+./include/holy/misc.h:18: note: this is the location of the previous definition
+   18 | #define holy_LONG_MAX (9223372036854775807L)
+      | 
+make: *** [Makefile:14104: libholy.pp] Error 1

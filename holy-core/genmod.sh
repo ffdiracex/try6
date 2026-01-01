@@ -1,0 +1,88 @@
+#! /bin/sh
+set -e
+
+#
+# Example:
+#
+# genmod.sh moddep.lst normal.module build-holy-module-verifier normal.mod
+#
+
+moddep=$1
+infile=$2
+outfile=$4
+
+tmpfile=${outfile}.tmp
+modname=`echo $infile | sed -e 's@\.module.*$@@'`
+
+if ! grep ^$modname: $moddep >/dev/null; then
+    echo "warning: moddep.lst has no dependencies for $modname" >&2
+    exit 0
+fi
+
+deps=`grep ^$modname: $moddep | sed s@^.*:@@`
+
+# remove old files if any
+rm -f $tmpfile $outfile
+
+if test x0 != x1; then
+    # stripout .modname and .moddeps sections from input module
+    objcopy -R .modname -R .moddeps $infile $tmpfile
+
+    # Attach .modname and .moddeps sections
+    t1=`mktemp "${TMPDIR:-/tmp}/tmp.XXXXXXXXXX"` || exit 1
+    printf "$modname\0" >$t1
+
+    t2=`mktemp "${TMPDIR:-/tmp}/tmp.XXXXXXXXXX"` || exit 1
+    for dep in $deps; do printf "$dep\0" >> $t2; done
+
+    if test -n "$deps"; then
+	objcopy --add-section .modname=$t1 --add-section .moddeps=$t2 $tmpfile
+    else
+	objcopy --add-section .modname=$t1 $tmpfile
+    fi
+    rm -f $t1 $t2
+
+	if test xpc != xemu; then
+	    strip --strip-unneeded \
+		-K holy_mod_init -K holy_mod_fini \
+		-K _holy_mod_init -K _holy_mod_fini \
+		-R .note.gnu.gold-version -R .note.GNU-stack \
+		-R .note -R .comment -R .ARM.exidx $tmpfile || exit 1
+	fi
+	if ! test -z "${TARGET_OBJ2ELF}"; then
+	    "${TARGET_OBJ2ELF}" $tmpfile || exit 1
+	fi
+else
+    tmpfile2=${outfile}.tmp2
+    t1=${outfile}.t1.c
+    t2=${outfile}.t2.c
+
+    # remove old files if any
+    rm -f $t1 $t2
+
+    cp $infile $tmpfile
+
+    # Attach .modname and .moddeps sections
+    echo "char modname[]  __attribute__ ((section(\"_modname, _modname\"))) = \"$modname\";" >$t1
+
+    for dep in $deps; do echo "char moddep_$dep[] __attribute__ ((section(\"_moddeps, _moddeps\"))) = \"$dep\";" >>$t2; done
+
+    if test -n "$deps"; then
+	gcc  -m32 -Wl,-melf_i386 -no-pie -Wl,--build-id=none -ffreestanding -nostdlib -o $tmpfile2 $t1 $t2 $tmpfile -Wl,-r,-d
+    else
+	gcc  -m32 -Wl,-melf_i386 -no-pie -Wl,--build-id=none -ffreestanding -nostdlib -o $tmpfile2 $t1 $tmpfile -Wl,-r,-d
+    fi
+    rm -f $t1 $t2 $tmpfile
+    mv $tmpfile2 $tmpfile
+
+	cp $tmpfile $tmpfile.bin
+	 -felf32 \
+	    -nr:_holy_mod_init:holy_mod_init \
+	    -nr:_holy_mod_fini:holy_mod_fini \
+	    -wd1106 -nu -nd $tmpfile.bin $tmpfile || exit 1
+	rm -f $tmpfile.bin
+fi
+if test xpc != xemu; then
+    ./build-holy-module-verifier $tmpfile i386 pc
+fi
+mv $tmpfile $outfile

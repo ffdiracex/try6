@@ -1,0 +1,269 @@
+#! /bin/sh
+set -e
+
+
+prefix="@prefix@"
+exec_prefix="@exec_prefix@"
+datarootdir="@datarootdir@"
+
+prefix="@prefix@"
+exec_prefix="@exec_prefix@"
+sbindir="@sbindir@"
+bindir="@bindir@"
+sysconfdir="@sysconfdir@"
+PACKAGE_NAME=@PACKAGE_NAME@
+PACKAGE_VERSION=@PACKAGE_VERSION@
+host_os=@host_os@
+datadir="@datadir@"
+if [ "x$pkgdatadir" = x ]; then
+    pkgdatadir="${datadir}/@PACKAGE@"
+fi
+# export it for scripts
+export pkgdatadir
+
+holy_cfg=""
+holy_mkconfig_dir="${sysconfdir}"/holy.d
+
+self=`basename $0`
+
+holy_probe="${sbindir}/@holy_probe@"
+holy_file="${bindir}/@holy_file@"
+holy_editenv="${bindir}/@holy_editenv@"
+holy_script_check="${bindir}/@holy_script_check@"
+
+export TEXTDOMAIN=@PACKAGE@
+export TEXTDOMAINDIR="@localedir@"
+
+. "${pkgdatadir}/holy-mkconfig_lib"
+
+# Usage: usage
+# Print the usage.
+usage () {
+    gettext_printf "Usage: %s [OPTION]\n" "$self"
+    gettext "Generate a holy config file"; echo
+    echo
+    print_option_help "-o, --output=$(gettext FILE)" "$(gettext "output generated config to FILE [default=stdout]")"
+    print_option_help "-h, --help" "$(gettext "print this message and exit")"
+    print_option_help "-v, --version" "$(gettext "print the version information and exit")"
+    echo
+    gettext "Report bugs to <bashscripter123@gmail.com>."; echo
+}
+
+argument () {
+  opt=$1
+  shift
+
+  if test $# -eq 0; then
+      gettext_printf "%s: option requires an argument -- \`%s'\n" "$self" "$opt" 1>&2
+      exit 1
+  fi
+  echo $1
+}
+
+# Check the arguments.
+while test $# -gt 0
+do
+    option=$1
+    shift
+
+    case "$option" in
+    -h | --help)
+	usage
+	exit 0 ;;
+    -V | --version)
+	echo "$self (${PACKAGE_NAME}) ${PACKAGE_VERSION}"
+	exit 0 ;;
+    -o | --output)
+	holy_cfg=`argument $option "$@"`; shift;;
+    --output=*)
+	holy_cfg=`echo "$option" | sed 's/--output=//'`
+	;;
+    -*)
+	gettext_printf "Unrecognized option \`%s'\n" "$option" 1>&2
+	usage
+	exit 1
+	;;
+    # Explicitly ignore non-option arguments, for compatibility.
+    esac
+done
+
+if [ "x$EUID" = "x" ] ; then
+  EUID=`id -u`
+fi
+
+if [ "$EUID" != 0 ] ; then
+  root=f
+  case "`uname 2>/dev/null`" in
+    CYGWIN*)
+      # Cygwin: Assume root if member of admin group
+      for g in `id -G 2>/dev/null` ; do
+	case $g in
+	  0|544) root=t ;;
+	esac
+      done ;;
+  esac
+  if [ $root != t ] ; then
+    gettext_printf "%s: You must run this as root\n" "$self" >&2
+    exit 1
+  fi
+fi
+
+set $holy_probe dummy
+if test -f "$1"; then
+    :
+else
+    gettext_printf "%s: Not found.\n" "$1" 1>&2
+    exit 1
+fi
+
+# Device containing our userland.  Typically used for root= parameter.
+holy_DEVICE="`${holy_probe} --target=device /`"
+holy_DEVICE_UUID="`${holy_probe} --device ${holy_DEVICE} --target=fs_uuid 2> /dev/null`" || true
+
+# Device containing our /boot partition.  Usually the same as holy_DEVICE.
+holy_DEVICE_BOOT="`${holy_probe} --target=device /boot`"
+holy_DEVICE_BOOT_UUID="`${holy_probe} --device ${holy_DEVICE_BOOT} --target=fs_uuid 2> /dev/null`" || true
+
+# Filesystem for the device containing our userland.  Used for stuff like
+# choosing Hurd filesystem module.
+holy_FS="`${holy_probe} --device ${holy_DEVICE} --target=fs 2> /dev/null || echo unknown`"
+
+if [ x"$holy_FS" = xunknown ]; then
+    holy_FS="$(stat -f --printf=%T / || echo unknown)"
+fi
+
+if test -f ${sysconfdir}/default/holy ; then
+  . ${sysconfdir}/default/holy
+fi
+
+# XXX: should this be deprecated at some point?
+if [ "x${holy_TERMINAL}" != "x" ] ; then
+  holy_TERMINAL_INPUT="${holy_TERMINAL}"
+  holy_TERMINAL_OUTPUT="${holy_TERMINAL}"
+fi
+
+termoutdefault=0
+if [ "x${holy_TERMINAL_OUTPUT}" = "x" ]; then
+    holy_TERMINAL_OUTPUT=gfxterm;
+    termoutdefault=1;
+fi
+
+for x in ${holy_TERMINAL_OUTPUT}; do
+    case "x${x}" in
+	xgfxterm) ;;
+	xconsole | xserial | xofconsole | xvga_text)
+            # make sure all our children behave in conformance with ascii..
+	    export LANG=C;;
+	*) echo "Invalid output terminal \"${holy_TERMINAL_OUTPUT}\"" >&2 ; exit 1 ;;
+    esac
+done
+
+holy_ACTUAL_DEFAULT="$holy_DEFAULT"
+
+if [ "x${holy_ACTUAL_DEFAULT}" = "xsaved" ] ; then holy_ACTUAL_DEFAULT="`"${holy_editenv}" - list | sed -n '/^saved_entry=/ s,^saved_entry=,,p'`" ; fi
+
+
+# These are defined in this script, export them here so that user can
+# override them.
+export holy_DEVICE \
+  holy_DEVICE_UUID \
+  holy_DEVICE_BOOT \
+  holy_DEVICE_BOOT_UUID \
+  holy_FS \
+  holy_FONT \
+  holy_PRELOAD_MODULES \
+  holy_ACTUAL_DEFAULT
+
+# These are optional, user-defined variables.
+export holy_DEFAULT \
+  holy_HIDDEN_TIMEOUT \
+  holy_HIDDEN_TIMEOUT_QUIET \
+  holy_TIMEOUT \
+  holy_TIMEOUT_STYLE \
+  holy_DEFAULT_BUTTON \
+  holy_HIDDEN_TIMEOUT_BUTTON \
+  holy_TIMEOUT_BUTTON \
+  holy_TIMEOUT_STYLE_BUTTON \
+  holy_BUTTON_CMOS_ADDRESS \
+  holy_BUTTON_CMOS_CLEAN \
+  holy_DISTRIBUTOR \
+  holy_CMDLINE_LINUX \
+  holy_CMDLINE_LINUX_DEFAULT \
+  holy_CMDLINE_XEN \
+  holy_CMDLINE_XEN_DEFAULT \
+  holy_CMDLINE_LINUX_XEN_REPLACE \
+  holy_CMDLINE_LINUX_XEN_REPLACE_DEFAULT \
+  holy_CMDLINE_NETBSD \
+  holy_CMDLINE_NETBSD_DEFAULT \
+  holy_CMDLINE_GNUMACH \
+  holy_TERMINAL_INPUT \
+  holy_TERMINAL_OUTPUT \
+  holy_SERIAL_COMMAND \
+  holy_DISABLE_LINUX_UUID \
+  holy_DISABLE_RECOVERY \
+  holy_VIDEO_BACKEND \
+  holy_GFXMODE \
+  holy_BACKGROUND \
+  holy_THEME \
+  holy_GFXPAYLOAD_LINUX \
+  holy_DISABLE_OS_PROBER \
+  holy_INIT_TUNE \
+  holy_SAVEDEFAULT \
+  holy_ENABLE_CRYPTODISK \
+  holy_BADRAM \
+  holy_OS_PROBER_SKIP_LIST \
+  holy_DISABLE_SUBMENU
+
+if test "x${holy_cfg}" != "x"; then
+  rm -f "${holy_cfg}.new"
+  oldumask=$(umask); umask 077
+  exec > "${holy_cfg}.new"
+  umask $oldumask
+fi
+gettext "Generating holy configuration file ..." >&2
+echo >&2
+
+cat << EOF
+#
+# DO NOT EDIT THIS FILE
+#
+# It is automatically generated by $self using templates
+# from ${holy_mkconfig_dir} and settings from ${sysconfdir}/default/holy
+#
+EOF
+
+
+for i in "${holy_mkconfig_dir}"/* ; do
+  case "$i" in
+    # emacsen backup files. FIXME: support other editors
+    *~) ;;
+    # emacsen autosave files. FIXME: support other editors
+    */\#*\#) ;;
+    *)
+      if holy_file_is_not_garbage "$i" && test -x "$i" ; then
+        echo
+        echo "### BEGIN $i ###"
+        "$i"
+        echo "### END $i ###"
+      fi
+    ;;
+  esac
+done
+
+if test "x${holy_cfg}" != "x" ; then
+  if ! ${holy_script_check} ${holy_cfg}.new; then
+    # TRANSLATORS: %s is replaced by filename
+    gettext_printf "Syntax errors are detected in generated holy config file.
+Ensure that there are no errors in /etc/default/holy
+and /etc/holy.d/* files or please file a bug report with
+%s file attached." "${holy_cfg}.new" >&2
+    echo >&2
+    exit 1
+  else
+    # none of the children aborted with error, install the new holy.cfg
+    mv -f ${holy_cfg}.new ${holy_cfg}
+  fi
+fi
+
+gettext "done" >&2
+echo >&2

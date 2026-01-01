@@ -1,0 +1,7 @@
+/*
+ * Copyright 2025 Felix P. A. Gillberg HolyBooter
+ * SPDX-License-Identifier: GPL-2.0
+ */
+
+#define MODE_UFS2 1
+#include "ufs.c"

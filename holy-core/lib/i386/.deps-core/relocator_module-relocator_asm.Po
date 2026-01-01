@@ -1,0 +1,5 @@
+lib/i386/relocator_module-relocator_asm.o: lib/i386/relocator_asm.S \
+ ../include/holy/symbol.h ../config.h ../include/holy/i386/memory.h
+../include/holy/symbol.h:
+../config.h:
+../include/holy/i386/memory.h:

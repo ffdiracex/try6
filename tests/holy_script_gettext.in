@@ -1,0 +1,55 @@
+#! @builddir@/holy-shell-tester
+#
+
+echo $"foo"
+echo $"foo   bar"
+
+echo -n $"foo"
+
+echo -e $"foo\nbar"
+
+echo -n -e $"foo\nbar"
+
+x=5
+echo $"$x"
+echo $"\x\\y\$x$x\\$xx${x}x\"$x\""
+
+echo $"$"
+echo $"$,x"
+
+echo $"one
+"
+echo $"one
+\""
+echo $"one
+two"
+
+echo one$"two
+"three
+echo one$"two
+\""three
+echo one$"two
+\"three\"
+four"
+
+echo $"one\
+"
+echo $"one\
+\""
+echo $"one\
+two"
+
+echo one$"two\
+"three
+echo one$"two\
+\""three
+echo one$"two\
+\"three\"\
+four"
+
+if test -n "$holyshell"; then insmod regexp; fi
+
+echo $"*"
+
+foo="*"
+echo $"$foo"

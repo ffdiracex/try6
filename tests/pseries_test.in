@@ -1,0 +1,23 @@
+#! /bin/sh
+
+set -e
+holyshell=@builddir@/holy-shell
+
+. "@builddir@/holy-core/modinfo.sh"
+
+if [ "${holy_modinfo_target_cpu}-${holy_modinfo_platform}" != powerpc-ieee1275 ]; then
+   exit 0
+fi
+
+if [ "$(echo hello | "${holyshell}" --pseries --timeout=180 --boot=cd)" != "Hello World" ]; then
+   exit 1
+fi
+
+if [ "$(echo hello | "${holyshell}" --pseries --timeout=180 --boot=hd)" != "Hello World" ]; then
+   exit 1
+fi
+
+# FIXME: workaround SLOF bugs
+#if [ "$(echo hello | "${holyshell}" --pseries --timeout=180 --boot=net)" != "Hello World" ]; then
+#   exit 1
+#fi

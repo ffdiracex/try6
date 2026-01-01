@@ -1,0 +1,57 @@
+	.text
+	.align	4
+	.globl	_gcry_mpih_mul_1
+	.ent	_gcry_mpih_mul_1
+_gcry_mpih_mul_1:
+	.set	noreorder
+	.set	nomacro
+
+/* # warm up phase 0 */
+	ld	$8,0($5)
+
+/* # warm up phase 1 */
+	daddiu	$5,$5,8
+	dmultu	$8,$7
+
+	daddiu	$6,$6,-1
+	beq	$6,$0,$LC0
+	 move	$2,$0		# zero cy2
+
+	daddiu	$6,$6,-1
+	beq	$6,$0,$LC1
+	ld	$8,0($5)	# load new s1 limb as early as possible
+
+Loop:	mflo	$10
+	mfhi	$9
+	daddiu	$5,$5,8
+	daddu	$10,$10,$2	# add old carry limb to low product limb
+	dmultu	$8,$7
+	ld	$8,0($5)	# load new s1 limb as early as possible
+	daddiu	$6,$6,-1	# decrement loop counter
+	sltu	$2,$10,$2	# carry from previous addition -> $2
+	sd	$10,0($4)
+	daddiu	$4,$4,8
+	bne	$6,$0,Loop
+	 daddu	$2,$9,$2	# add high product limb and carry from addition
+
+/* # cool down phase 1 */
+$LC1:	mflo	$10
+	mfhi	$9
+	daddu	$10,$10,$2
+	sltu	$2,$10,$2
+	dmultu	$8,$7
+	sd	$10,0($4)
+	daddiu	$4,$4,8
+	daddu	$2,$9,$2	# add high product limb and carry from addition
+
+/* # cool down phase 0 */
+$LC0:	mflo	$10
+	mfhi	$9
+	daddu	$10,$10,$2
+	sltu	$2,$10,$2
+	sd	$10,0($4)
+	j	$31
+	daddu	$2,$9,$2	# add high product limb and carry from addition
+
+	.end	_gcry_mpih_mul_1
+

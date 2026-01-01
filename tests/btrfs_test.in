@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -e
+
+if [ "x$EUID" = "x" ] ; then
+  EUID=`id -u`
+fi
+
+if [ "$EUID" != 0 ] ; then
+   exit 77
+fi
+
+if ! which mkfs.btrfs >/dev/null 2>&1; then
+   echo "mkfs.btrfs not installed; cannot test btrfs."
+   exit 77
+fi
+
+"@builddir@/holy-fs-tester" btrfs
+"@builddir@/holy-fs-tester" btrfs_zlib
+"@builddir@/holy-fs-tester" btrfs_lzo
+"@builddir@/holy-fs-tester" btrfs_raid0
+"@builddir@/holy-fs-tester" btrfs_raid1
+"@builddir@/holy-fs-tester" btrfs_single
+"@builddir@/holy-fs-tester" btrfs_raid10

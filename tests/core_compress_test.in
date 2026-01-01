@@ -1,0 +1,22 @@
+#! /bin/sh
+
+set -e
+holyshell=@builddir@/holy-shell
+
+. "@builddir@/holy-core/modinfo.sh"
+
+case "${holy_modinfo_target_cpu}-${holy_modinfo_platform}" in
+    # FIXME: Only mips currently supports configurable core compression
+    *-emu | i386-* | x86_64-* | sparc64-* | ia64-*)
+	exit 0
+	;;
+esac
+
+
+if [ "$(echo hello | "${holyshell}" --holy-mkimage-extra=--compress=xz)" != "Hello World" ]; then
+   exit 1
+fi
+
+if [ "$(echo hello | "${holyshell}" --holy-mkimage-extra=--compress=none)" != "Hello World" ]; then
+   exit 1
+fi

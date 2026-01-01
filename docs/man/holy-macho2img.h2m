@@ -1,0 +1,4 @@
+[NAME]
+holy-macho2img \- convert Mach-O to raw image
+[SEE ALSO]
+.BR holy-mkimage (1)

@@ -1,0 +1,28 @@
+#! /bin/bash
+set -e
+
+
+disks=`echo ls | @builddir@/holy-shell| grep -av '^Network protocols:$'| grep -av '^tftp http $'`
+other=`echo insmod regexp\; echo \* | @builddir@/holy-shell`
+for d in $disks; do
+    if echo "$d" |grep ',' >/dev/null; then
+	if echo "$other" | grep -F -- "$d" >/dev/null; then
+	    echo "$d should not occur in * expansion" >&2
+	    exit 1
+	fi
+    else
+	if ! echo "$other" | grep -F -- "$d" >/dev/null; then
+	    echo "$d missing from * expansion" >&2
+	    exit 1
+	fi
+    fi
+done
+
+other=`echo insmod regexp\; echo '(*)' | @builddir@/holy-shell`
+for d in $disks; do
+    if ! echo "$other" | grep -F -- "$d" >/dev/null; then
+	echo "$d missing from (*) expansion" >&2
+	exit 1
+    fi
+done
+

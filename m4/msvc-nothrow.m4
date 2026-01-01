@@ -1,0 +1,4 @@
+AC_DEFUN([gl_MSVC_NOTHROW],
+[
+  AC_REQUIRE([gl_MSVC_INVAL])
+])

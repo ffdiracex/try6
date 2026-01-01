@@ -1,0 +1,4 @@
+[NAME]
+holy-probe \- probe device information for holy
+[SEE ALSO]
+.BR holy-fstest (1)

@@ -1,0 +1,4 @@
+[NAME]
+holy-mkfont \- make holy font files
+[SEE ALSO]
+.BR holy-mkconfig (8)

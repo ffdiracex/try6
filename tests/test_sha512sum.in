@@ -1,0 +1,36 @@
+#! /bin/bash
+
+# create a randome file
+file="`mktemp "${TMPDIR:-/tmp}/tmp.XXXXXXXXXX"`" || exit 1
+cat >$file <<EOF
+hello world!
+EOF
+
+. "@builddir@/holy-core/modinfo.sh"
+
+if [ x"${holy_modinfo_platform}" = xemu ]; then
+    holy_file="(host)$file"
+else
+    holy_file="/boot/holy/file"
+fi
+
+
+outfile1="`mktemp "${TMPDIR:-/tmp}/tmp.XXXXXXXXXX"`" || exit 1
+@builddir@/holy-shell --files=/boot/holy/file=$file >$outfile1 <<EOF
+sha512sum $holy_file
+EOF
+
+outfile2="`mktemp "${TMPDIR:-/tmp}/tmp.XXXXXXXXXX"`" || exit 1
+sha512sum $file >$outfile2
+
+SHA1=`cat $outfile1 | tr -d '\n' | cut -f1 -d\ `
+SHA2=`cat $outfile2 | cut -f1 -d\ `
+
+if test "$SHA1" = "$SHA2"; then
+    rm -f ${outfile1} ${outfile2}
+    exit 0
+else
+    echo "holy sha512sum output did not match sha512sum output."
+    echo "See diff -u ${outfile1} ${outfile2}"
+    exit 1
+fi

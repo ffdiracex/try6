@@ -1,0 +1,5 @@
+[NAME]
+holy-editenv \- edit holy environment block
+[SEE ALSO]
+.BR holy-reboot (8),
+.BR holy-set-default (8)

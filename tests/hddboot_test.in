@@ -1,0 +1,23 @@
+#! /bin/sh
+
+set -e
+holyshell=@builddir@/holy-shell
+
+. "@builddir@/holy-core/modinfo.sh"
+
+case "${holy_modinfo_target_cpu}-${holy_modinfo_platform}" in
+    # PLATFORM: emu is different
+    *-emu)
+	exit 0;;
+    # PLATFORM: Flash targets
+    i386-qemu | i386-coreboot | mips-qemu_mips | mipsel-qemu_mips)
+	exit 0;;
+    # FIXME: currently holy-shell uses only -kernel for loongson
+    mipsel-loongson)
+	exit 0;;
+esac
+
+if [ "$(echo hello | "${holyshell}" --boot=hd)" != "Hello World" ]; then
+   exit 1
+fi
+

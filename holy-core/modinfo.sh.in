@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# User-controllable options
+holy_modinfo_target_cpu=@target_cpu@
+holy_modinfo_platform=@platform@
+holy_disk_cache_stats=@DISK_CACHE_STATS@
+holy_boot_time_stats=@BOOT_TIME_STATS@
+holy_have_font_source=@HAVE_FONT_SOURCE@
+
+# Autodetected config
+holy_have_asm_uscore=@HAVE_ASM_USCORE@
+holy_bss_start_symbol="@BSS_START_SYMBOL@"
+holy_end_symbol="@END_SYMBOL@"
+
+# Build environment
+holy_target_cc='@TARGET_CC@'
+holy_target_cc_version='@TARGET_CC_VERSION@'
+holy_target_cflags='@TARGET_CFLAGS@'
+holy_target_cppflags='@TARGET_CPPFLAGS@'
+holy_target_ccasflags='@TARGET_CCASFLAGS@'
+holy_target_ldflags='@TARGET_LDFLAGS@'
+holy_cflags='@CFLAGS@'
+holy_cppflags='@CPPFLAGS@'
+holy_ccasflags='@CCASFLAGS@'
+holy_ldflags='@LDFLAGS@'
+holy_target_strip='@TARGET_STRIP@'
+holy_target_nm='@TARGET_NM@'
+holy_target_ranlib='@TARGET_RANLIB@'
+holy_target_objconf='@TARGET_OBJCONV@'
+holy_target_obj2elf='@TARGET_OBJ2ELF@'
+holy_target_img_base_ldopt='@TARGET_IMG_BASE_LDOPT@'
+holy_target_img_ldflags='@TARGET_IMG_BASE_LDFLAGS@'
+
+# Version
+holy_version="@VERSION@"
+holy_package="@PACKAGE@"
+holy_package_string="@PACKAGE_STRING@"
+holy_package_version="@PACKAGE_VERSION@"
+holy_package_name="@PACKAGE_NAME@"
+holy_package_bugreport="@PACKAGE_BUGREPORT@"

@@ -1,0 +1,31 @@
+AutoGen definitions Makefile.tpl;
+
+library = {
+  name = libholygcry.a;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+  extra_dist = holy-core/lib/libgcrypt-holy/cipher/ChangeLog;
+
+  common = holy-core/lib/libgcrypt-holy/cipher/arcfour.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/blowfish.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/camellia-glue.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/camellia.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/cast5.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/crc.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/des.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/idea.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/md4.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/md5.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/rfc2268.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/rijndael.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/rmd160.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/seed.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/serpent.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/sha1.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/sha256.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/sha512.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/tiger.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/twofish.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/whirlpool.c;
+  common = holy-core/lib/libgcrypt-holy/cipher/init.c;
+};

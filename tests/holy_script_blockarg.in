@@ -1,0 +1,26 @@
+#! /bin/bash
+
+
+error_if_not () {
+    if test "$1" != "$2"; then
+	echo "[$1]" != "[$2]"
+	exit 1
+    fi
+}
+
+cmd='test_blockarg { true }'
+v=`echo "$cmd" | @builddir@/holy-shell`
+error_if_not "$v" '{ true }'
+
+tmp=`mktemp "${TMPDIR:-/tmp}/tmp.XXXXXXXXXX"` || exit 1
+cmd='test_blockarg { test_blockarg { true } }'
+echo "$cmd" | @builddir@/holy-shell >$tmp
+error_if_not "`head -n1 $tmp|tail -n1`" '{ test_blockarg { true } }'
+error_if_not "`head -n2 $tmp|tail -n1`" '{ true }'
+
+cmd='test_blockarg { test_blockarg { test_blockarg { true } }; test_blockarg { true } }'
+echo "$cmd" | @builddir@/holy-shell >$tmp
+error_if_not "`head -n1 $tmp|tail -n1`" '{ test_blockarg { test_blockarg { true } }; test_blockarg { true } }'
+error_if_not "`head -n2 $tmp|tail -n1`" '{ test_blockarg { true } }'
+error_if_not "`head -n3 $tmp|tail -n1`" '{ true }'
+error_if_not "`head -n4 $tmp|tail -n1`" '{ true }'

@@ -1,0 +1,8 @@
+lib/i386/relocator_module-relocator16.o: lib/i386/relocator16.S \
+ ../include/holy/i386/relocator_private.h lib/i386/relocator_common.S \
+ ../include/holy/symbol.h ../config.h ../include/holy/i386/memory.h
+../include/holy/i386/relocator_private.h:
+lib/i386/relocator_common.S:
+../include/holy/symbol.h:
+../config.h:
+../include/holy/i386/memory.h:

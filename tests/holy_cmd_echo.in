@@ -1,0 +1,26 @@
+#! @builddir@/holy-shell-tester
+
+echo
+echo -n
+
+echo foo
+echo foo   bar
+
+echo -n foo
+
+echo -e "foo\nbar"
+
+echo -n -e "foo\nbar"
+
+echo foo -n
+echo foo -n -e
+
+echo -------
+
+if test -n "$holyshell"; then insmod regexp; fi
+
+echo '*'
+echo "*"
+
+foo="*"
+echo "$foo"

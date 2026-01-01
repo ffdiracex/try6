@@ -1,0 +1,10 @@
+[NAME]
+holy-mklayout \- generate a holy keyboard layout file
+[DESCRIPTION]
+holy-mklayout processes a keyboard layout description in
+.BR keymaps (5)
+format into a format that can be used by holy's
+.B keymap
+command.
+[SEE ALSO]
+.BR holy-mkconfig (8)

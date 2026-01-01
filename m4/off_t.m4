@@ -1,0 +1,9 @@
+AC_DEFUN([gl_TYPE_OFF_T],
+[
+  m4_ifdef([gl_LARGEFILE], [
+    AC_REQUIRE([gl_LARGEFILE])
+  ], [
+    WINDOWS_64_BIT_OFF_T=0
+  ])
+  AC_SUBST([WINDOWS_64_BIT_OFF_T])
+])

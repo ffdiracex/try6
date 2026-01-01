@@ -1,0 +1,1618 @@
+libholykern_a_SOURCES  = 
+nodist_libholykern_a_SOURCES  = 
+libholykern_a_CFLAGS  = 
+libholykern_a_CPPFLAGS  = 
+libholykern_a_CCASFLAGS  = 
+libholymods_a_SOURCES  = 
+nodist_libholymods_a_SOURCES  = 
+libholymods_a_CFLAGS  = 
+libholymods_a_CPPFLAGS  = 
+libholymods_a_CCASFLAGS  = 
+libholygcry_a_SOURCES  = 
+nodist_libholygcry_a_SOURCES  = 
+libholygcry_a_CFLAGS  = 
+libholygcry_a_CPPFLAGS  = 
+libholygcry_a_CCASFLAGS  = 
+noinst_LIBRARIES += libholykern.a
+libholykern_a_SOURCES += util/misc.c holy-core/kern/command.c holy-core/kern/device.c holy-core/kern/disk.c holy-core/lib/disk.c util/getroot.c holy-core/osdep/unix/getroot.c holy-core/osdep/getroot.c holy-core/osdep/devmapper/getroot.c holy-core/osdep/relpath.c holy-core/kern/emu/hostdisk.c holy-core/osdep/devmapper/hostdisk.c holy-core/osdep/hostdisk.c holy-core/osdep/unix/hostdisk.c holy-core/osdep/exec.c holy-core/osdep/sleep.c holy-core/osdep/password.c holy-core/kern/emu/misc.c holy-core/kern/emu/mm.c holy-core/kern/env.c holy-core/kern/err.c holy-core/kern/file.c holy-core/kern/fs.c holy-core/kern/list.c holy-core/kern/misc.c holy-core/kern/partition.c holy-core/lib/crypto.c holy-core/disk/luks.c holy-core/disk/geli.c holy-core/disk/cryptodisk.c holy-core/disk/AFSplitter.c holy-core/lib/pbkdf2.c holy-core/commands/extcmd.c holy-core/lib/arg.c holy-core/disk/ldm.c holy-core/disk/diskfilter.c holy-core/partmap/gpt.c holy-core/partmap/msdos.c holy-core/fs/proc.c holy-core/fs/archelp.c 
+nodist_libholykern_a_SOURCES += 
+libholykern_a_CFLAGS += $(AM_CFLAGS) $(CFLAGS_LIBRARY) $(CFLAGS_GNULIB) 
+libholykern_a_CPPFLAGS += $(AM_CPPFLAGS) $(CPPFLAGS_LIBRARY) $(CPPFLAGS_GNULIB) 
+libholykern_a_CCASFLAGS += $(AM_CCASFLAGS) $(CCASFLAGS_LIBRARY) 
+dist_noinst_DATA += holy-core/kern/disk_common.c holy-core/osdep/unix/relpath.c holy-core/osdep/aros/relpath.c holy-core/osdep/windows/relpath.c 
+BUILT_SOURCES += $(nodist_libholykern_a_SOURCES)
+CLEANFILES += $(nodist_libholykern_a_SOURCES)
+noinst_LIBRARIES += libholymods.a
+libholymods_a_SOURCES += holy-core/commands/blocklist.c holy-core/commands/macbless.c holy-core/commands/xnu_uuid.c holy-core/commands/testload.c holy-core/commands/ls.c holy-core/disk/dmraid_nvidia.c holy-core/disk/loopback.c holy-core/disk/lvm.c holy-core/disk/mdraid_linux.c holy-core/disk/mdraid_linux_be.c holy-core/disk/mdraid1x_linux.c holy-core/disk/raid5_recover.c holy-core/disk/raid6_recover.c holy-core/font/font.c holy-core/gfxmenu/font.c holy-core/normal/charset.c holy-core/video/fb/fbblit.c holy-core/video/fb/fbutil.c holy-core/video/fb/fbfill.c holy-core/video/fb/video_fb.c holy-core/video/video.c holy-core/video/capture.c holy-core/video/colors.c holy-core/unidata.c holy-core/io/bufio.c holy-core/fs/affs.c holy-core/fs/afs.c holy-core/fs/bfs.c holy-core/fs/btrfs.c holy-core/fs/cbfs.c holy-core/fs/cpio.c holy-core/fs/cpio_be.c holy-core/fs/odc.c holy-core/fs/newc.c holy-core/fs/ext2.c holy-core/fs/fat.c holy-core/fs/exfat.c holy-core/fs/fshelp.c holy-core/fs/hfs.c holy-core/fs/hfsplus.c holy-core/fs/hfspluscomp.c holy-core/fs/iso9660.c holy-core/fs/jfs.c holy-core/fs/minix.c holy-core/fs/minix2.c holy-core/fs/minix3.c holy-core/fs/minix_be.c holy-core/fs/minix2_be.c holy-core/fs/minix3_be.c holy-core/fs/nilfs2.c holy-core/fs/ntfs.c holy-core/fs/ntfscomp.c holy-core/fs/reiserfs.c holy-core/fs/romfs.c holy-core/fs/sfs.c holy-core/fs/squash4.c holy-core/fs/tar.c holy-core/fs/udf.c holy-core/fs/ufs2.c holy-core/fs/ufs.c holy-core/fs/ufs_be.c holy-core/fs/xfs.c holy-core/fs/zfs/zfscrypt.c holy-core/fs/zfs/zfs.c holy-core/fs/zfs/zfsinfo.c holy-core/fs/zfs/zfs_lzjb.c holy-core/fs/zfs/zfs_lz4.c holy-core/fs/zfs/zfs_sha256.c holy-core/fs/zfs/zfs_fletcher.c holy-core/lib/envblk.c holy-core/lib/hexdump.c holy-core/lib/LzFind.c holy-core/lib/LzmaEnc.c holy-core/lib/crc.c holy-core/lib/adler32.c holy-core/lib/crc64.c holy-core/normal/datetime.c holy-core/normal/misc.c holy-core/partmap/acorn.c holy-core/partmap/amiga.c holy-core/partmap/apple.c holy-core/partmap/sun.c holy-core/partmap/plan.c holy-core/partmap/dvh.c holy-core/partmap/sunpc.c holy-core/partmap/bsdlabel.c holy-core/partmap/dfly.c holy-core/script/function.c holy-core/script/lexer.c holy-core/script/main.c holy-core/script/script.c holy-core/script/argv.c holy-core/io/gzio.c holy-core/io/xzio.c holy-core/io/lzopio.c holy-core/kern/ia64/dl_helper.c holy-core/kern/arm/dl_helper.c holy-core/kern/arm64/dl_helper.c holy-core/lib/minilzo/minilzo.c holy-core/lib/xzembed/xz_dec_bcj.c holy-core/lib/xzembed/xz_dec_lzma2.c holy-core/lib/xzembed/xz_dec_stream.c 
+nodist_libholymods_a_SOURCES += holy_script.tab.c holy_script.yy.c libholy_a_init.c holy_script.yy.h holy_script.tab.h 
+libholymods_a_CFLAGS += $(AM_CFLAGS) $(CFLAGS_LIBRARY) -fno-builtin -Wno-undef 
+libholymods_a_CPPFLAGS += $(AM_CPPFLAGS) $(CPPFLAGS_LIBRARY) -I$(top_srcdir)/holy-core/lib/minilzo -I$(srcdir)/holy-core/lib/xzembed -DMINILZO_HAVE_CONFIG_H 
+libholymods_a_CCASFLAGS += $(AM_CCASFLAGS) $(CCASFLAGS_LIBRARY) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_libholymods_a_SOURCES)
+CLEANFILES += $(nodist_libholymods_a_SOURCES)
+noinst_LIBRARIES += libholygcry.a
+libholygcry_a_SOURCES += holy-core/lib/libgcrypt-holy/cipher/arcfour.c holy-core/lib/libgcrypt-holy/cipher/blowfish.c holy-core/lib/libgcrypt-holy/cipher/camellia-glue.c holy-core/lib/libgcrypt-holy/cipher/camellia.c holy-core/lib/libgcrypt-holy/cipher/cast5.c holy-core/lib/libgcrypt-holy/cipher/crc.c holy-core/lib/libgcrypt-holy/cipher/des.c holy-core/lib/libgcrypt-holy/cipher/idea.c holy-core/lib/libgcrypt-holy/cipher/md4.c holy-core/lib/libgcrypt-holy/cipher/md5.c holy-core/lib/libgcrypt-holy/cipher/rfc2268.c holy-core/lib/libgcrypt-holy/cipher/rijndael.c holy-core/lib/libgcrypt-holy/cipher/rmd160.c holy-core/lib/libgcrypt-holy/cipher/seed.c holy-core/lib/libgcrypt-holy/cipher/serpent.c holy-core/lib/libgcrypt-holy/cipher/sha1.c holy-core/lib/libgcrypt-holy/cipher/sha256.c holy-core/lib/libgcrypt-holy/cipher/sha512.c holy-core/lib/libgcrypt-holy/cipher/tiger.c holy-core/lib/libgcrypt-holy/cipher/twofish.c holy-core/lib/libgcrypt-holy/cipher/whirlpool.c holy-core/lib/libgcrypt-holy/cipher/init.c 
+nodist_libholygcry_a_SOURCES += 
+libholygcry_a_CFLAGS += $(AM_CFLAGS) $(CFLAGS_LIBRARY) $(CFLAGS_GCRY) 
+libholygcry_a_CPPFLAGS += $(AM_CPPFLAGS) $(CPPFLAGS_LIBRARY) $(CPPFLAGS_GCRY) 
+libholygcry_a_CCASFLAGS += $(AM_CCASFLAGS) $(CCASFLAGS_LIBRARY) 
+dist_noinst_DATA += holy-core/lib/libgcrypt-holy/cipher/ChangeLog 
+BUILT_SOURCES += $(nodist_libholygcry_a_SOURCES)
+CLEANFILES += $(nodist_libholygcry_a_SOURCES)
+bin_PROGRAMS += holy-mkimage
+if COND_MAN_PAGES
+man_MANS += holy-mkimage.1
+
+holy-mkimage.1: holy-mkimage 
+	chmod a+x holy-mkimage
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-mkimage.h2m -o $@ holy-mkimage
+	
+CLEANFILES += holy-mkimage.1
+endif
+holy_mkimage_SOURCES  = util/holy-mkimage.c util/mkimage.c util/holy-mkimage32.c util/holy-mkimage64.c util/resolve.c holy-core/kern/emu/argp_common.c holy-core/osdep/init.c holy-core/osdep/config.c util/config.c 
+nodist_holy_mkimage_SOURCES  = 
+holy_mkimage_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBLZMA) $(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_mkimage_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_mkimage_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_mkimage_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) -Dholy_PKGLIBDIR=\"$(pkglibdir)\" 
+holy_mkimage_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += holy-core/osdep/aros/config.c holy-core/osdep/windows/config.c holy-core/osdep/unix/config.c util/holy-mkimagexx.c 
+BUILT_SOURCES += $(nodist_holy_mkimage_SOURCES)
+CLEANFILES += $(nodist_holy_mkimage_SOURCES)
+bin_PROGRAMS += holy-mkrelpath
+if COND_MAN_PAGES
+man_MANS += holy-mkrelpath.1
+
+holy-mkrelpath.1: holy-mkrelpath 
+	chmod a+x holy-mkrelpath
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-mkrelpath.h2m -o $@ holy-mkrelpath
+	
+CLEANFILES += holy-mkrelpath.1
+endif
+holy_mkrelpath_SOURCES  = util/holy-mkrelpath.c holy-core/kern/emu/argp_common.c holy-core/osdep/init.c 
+nodist_holy_mkrelpath_SOURCES  = 
+holy_mkrelpath_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_mkrelpath_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_mkrelpath_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_mkrelpath_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_mkrelpath_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_mkrelpath_SOURCES)
+CLEANFILES += $(nodist_holy_mkrelpath_SOURCES)
+bin_PROGRAMS += holy-script-check
+if COND_MAN_PAGES
+man_MANS += holy-script-check.1
+
+holy-script-check.1: holy-script-check 
+	chmod a+x holy-script-check
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-script-check.h2m -o $@ holy-script-check
+	
+CLEANFILES += holy-script-check.1
+endif
+holy_script_check_SOURCES  = util/holy-script-check.c holy-core/kern/emu/argp_common.c holy-core/osdep/init.c 
+nodist_holy_script_check_SOURCES  = 
+holy_script_check_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_script_check_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_script_check_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_script_check_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_script_check_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_script_check_SOURCES)
+CLEANFILES += $(nodist_holy_script_check_SOURCES)
+bin_PROGRAMS += holy-editenv
+if COND_MAN_PAGES
+man_MANS += holy-editenv.1
+
+holy-editenv.1: holy-editenv 
+	chmod a+x holy-editenv
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-editenv.h2m -o $@ holy-editenv
+	
+CLEANFILES += holy-editenv.1
+endif
+holy_editenv_SOURCES  = util/holy-editenv.c util/editenv.c holy-core/osdep/init.c 
+nodist_holy_editenv_SOURCES  = 
+holy_editenv_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_editenv_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_editenv_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_editenv_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_editenv_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_editenv_SOURCES)
+CLEANFILES += $(nodist_holy_editenv_SOURCES)
+bin_PROGRAMS += holy-mkpasswd-pbkdf2
+if COND_MAN_PAGES
+man_MANS += holy-mkpasswd-pbkdf2.1
+
+holy-mkpasswd-pbkdf2.1: holy-mkpasswd-pbkdf2 
+	chmod a+x holy-mkpasswd-pbkdf2
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-mkpasswd-pbkdf2.h2m -o $@ holy-mkpasswd-pbkdf2
+	
+CLEANFILES += holy-mkpasswd-pbkdf2.1
+endif
+holy_mkpasswd_pbkdf2_SOURCES  = util/holy-mkpasswd-pbkdf2.c holy-core/kern/emu/argp_common.c holy-core/osdep/random.c holy-core/osdep/init.c 
+nodist_holy_mkpasswd_pbkdf2_SOURCES  = 
+holy_mkpasswd_pbkdf2_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_mkpasswd_pbkdf2_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_mkpasswd_pbkdf2_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_mkpasswd_pbkdf2_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_mkpasswd_pbkdf2_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_mkpasswd_pbkdf2_SOURCES)
+CLEANFILES += $(nodist_holy_mkpasswd_pbkdf2_SOURCES)
+if COND_APPLE_LINKER
+bin_PROGRAMS += holy-macho2img
+if COND_MAN_PAGES
+man_MANS += holy-macho2img.1
+
+holy-macho2img.1: holy-macho2img 
+	chmod a+x holy-macho2img
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-macho2img.h2m -o $@ holy-macho2img
+	
+CLEANFILES += holy-macho2img.1
+endif
+holy_macho2img_SOURCES  = util/holy-macho2img.c 
+nodist_holy_macho2img_SOURCES  = 
+holy_macho2img_LDADD  = 
+holy_macho2img_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_macho2img_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_macho2img_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_macho2img_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_macho2img_SOURCES)
+CLEANFILES += $(nodist_holy_macho2img_SOURCES)
+endif COND_APPLE_LINKER
+bin_PROGRAMS += holy-fstest
+if COND_MAN_PAGES
+man_MANS += holy-fstest.1
+
+holy-fstest.1: holy-fstest 
+	chmod a+x holy-fstest
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-fstest.h2m -o $@ holy-fstest
+	
+CLEANFILES += holy-fstest.1
+endif
+holy_fstest_SOURCES  = util/holy-fstest.c holy-core/kern/emu/hostfs.c holy-core/disk/host.c holy-core/osdep/init.c 
+nodist_holy_fstest_SOURCES  = holy_fstest_init.c 
+holy_fstest_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_fstest_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_fstest_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_fstest_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_fstest_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_fstest_SOURCES)
+CLEANFILES += $(nodist_holy_fstest_SOURCES)
+if COND_holy_MOUNT
+bin_PROGRAMS += holy-mount
+if COND_MAN_PAGES
+man_MANS += holy-mount.1
+
+holy-mount.1: holy-mount 
+	chmod a+x holy-mount
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-mount.h2m -o $@ holy-mount
+	
+CLEANFILES += holy-mount.1
+endif
+holy_mount_SOURCES  = util/holy-mount.c holy-core/kern/emu/hostfs.c holy-core/disk/host.c holy-core/osdep/init.c 
+nodist_holy_mount_SOURCES  = holy_fstest_init.c 
+holy_mount_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) -lfuse 
+holy_mount_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_mount_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_mount_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_mount_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_mount_SOURCES)
+CLEANFILES += $(nodist_holy_mount_SOURCES)
+endif COND_holy_MOUNT
+if COND_holy_MKFONT
+bin_PROGRAMS += holy-mkfont
+if COND_MAN_PAGES
+man_MANS += holy-mkfont.1
+
+holy-mkfont.1: holy-mkfont 
+	chmod a+x holy-mkfont
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-mkfont.h2m -o $@ holy-mkfont
+	
+CLEANFILES += holy-mkfont.1
+endif
+holy_mkfont_SOURCES  = util/holy-mkfont.c holy-core/kern/emu/argp_common.c holy-core/osdep/init.c 
+nodist_holy_mkfont_SOURCES  = 
+holy_mkfont_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(freetype_libs) $(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_mkfont_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) $(freetype_cflags) 
+holy_mkfont_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_mkfont_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) -Dholy_MKFONT=1 
+holy_mkfont_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_mkfont_SOURCES)
+CLEANFILES += $(nodist_holy_mkfont_SOURCES)
+endif COND_holy_MKFONT
+sbin_PROGRAMS += holy-probe
+if COND_MAN_PAGES
+man_MANS += holy-probe.8
+
+holy-probe.8: holy-probe 
+	chmod a+x holy-probe
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=8 -i $(top_srcdir)/docs/man/holy-probe.h2m -o $@ holy-probe
+	
+CLEANFILES += holy-probe.8
+endif
+holy_probe_SOURCES  = util/holy-probe.c util/probe.c holy-core/osdep/ofpath.c holy-core/kern/emu/argp_common.c holy-core/osdep/init.c 
+nodist_holy_probe_SOURCES  = 
+holy_probe_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_probe_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_probe_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_probe_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_probe_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_probe_SOURCES)
+CLEANFILES += $(nodist_holy_probe_SOURCES)
+sbin_PROGRAMS += holy-bios-setup
+if COND_MAN_PAGES
+man_MANS += holy-bios-setup.8
+
+holy-bios-setup.8: holy-bios-setup 
+	chmod a+x holy-bios-setup
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=8 -i $(top_srcdir)/docs/man/holy-bios-setup.h2m -o $@ holy-bios-setup
+	
+CLEANFILES += holy-bios-setup.8
+endif
+holy_bios_setup_SOURCES  = util/holy-setup.c util/setup_bios.c holy-core/kern/emu/argp_common.c holy-core/lib/reed_solomon.c holy-core/osdep/blocklist.c holy-core/osdep/init.c 
+nodist_holy_bios_setup_SOURCES  = 
+holy_bios_setup_LDADD  = libholymods.a libholykern.a libholygcry.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_bios_setup_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_bios_setup_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_bios_setup_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) -Dholy_SETUP_FUNC=holy_util_bios_setup 
+holy_bios_setup_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += util/setup.c holy-core/osdep/generic/blocklist.c holy-core/osdep/linux/blocklist.c holy-core/osdep/windows/blocklist.c 
+BUILT_SOURCES += $(nodist_holy_bios_setup_SOURCES)
+CLEANFILES += $(nodist_holy_bios_setup_SOURCES)
+sbin_PROGRAMS += holy-sparc64-setup
+if COND_MAN_PAGES
+man_MANS += holy-sparc64-setup.8
+
+holy-sparc64-setup.8: holy-sparc64-setup 
+	chmod a+x holy-sparc64-setup
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=8 -i $(top_srcdir)/docs/man/holy-sparc64-setup.h2m -o $@ holy-sparc64-setup
+	
+CLEANFILES += holy-sparc64-setup.8
+endif
+holy_sparc64_setup_SOURCES  = util/holy-setup.c util/setup_sparc.c holy-core/kern/emu/argp_common.c holy-core/lib/reed_solomon.c holy-core/osdep/ofpath.c holy-core/osdep/blocklist.c holy-core/osdep/init.c 
+nodist_holy_sparc64_setup_SOURCES  = 
+holy_sparc64_setup_LDADD  = libholymods.a libholykern.a libholygcry.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_sparc64_setup_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_sparc64_setup_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_sparc64_setup_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) -Dholy_SETUP_FUNC=holy_util_sparc_setup 
+holy_sparc64_setup_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_sparc64_setup_SOURCES)
+CLEANFILES += $(nodist_holy_sparc64_setup_SOURCES)
+sbin_PROGRAMS += holy-ofpathname
+if COND_MAN_PAGES
+man_MANS += holy-ofpathname.8
+
+holy-ofpathname.8: holy-ofpathname 
+	chmod a+x holy-ofpathname
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=8 -i $(top_srcdir)/docs/man/holy-ofpathname.h2m -o $@ holy-ofpathname
+	
+CLEANFILES += holy-ofpathname.8
+endif
+holy_ofpathname_SOURCES  = util/ieee1275/holy-ofpathname.c holy-core/osdep/ofpath.c holy-core/osdep/init.c 
+nodist_holy_ofpathname_SOURCES  = 
+holy_ofpathname_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_ofpathname_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_ofpathname_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_ofpathname_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_ofpathname_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_ofpathname_SOURCES)
+CLEANFILES += $(nodist_holy_ofpathname_SOURCES)
+bin_PROGRAMS += holy-mklayout
+if COND_MAN_PAGES
+man_MANS += holy-mklayout.1
+
+holy-mklayout.1: holy-mklayout 
+	chmod a+x holy-mklayout
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-mklayout.h2m -o $@ holy-mklayout
+	
+CLEANFILES += holy-mklayout.1
+endif
+holy_mklayout_SOURCES  = util/holy-mklayout.c holy-core/kern/emu/argp_common.c holy-core/osdep/init.c 
+nodist_holy_mklayout_SOURCES  = 
+holy_mklayout_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_mklayout_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_mklayout_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_mklayout_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_mklayout_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_mklayout_SOURCES)
+CLEANFILES += $(nodist_holy_mklayout_SOURCES)
+sbin_PROGRAMS += holy-macbless
+if COND_MAN_PAGES
+man_MANS += holy-macbless.8
+
+holy-macbless.8: holy-macbless 
+	chmod a+x holy-macbless
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=8 -i $(top_srcdir)/docs/man/holy-macbless.h2m -o $@ holy-macbless
+	
+CLEANFILES += holy-macbless.8
+endif
+holy_macbless_SOURCES  = util/holy-macbless.c holy-core/osdep/init.c holy-core/kern/emu/argp_common.c 
+nodist_holy_macbless_SOURCES  = 
+holy_macbless_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_macbless_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_macbless_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_macbless_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_macbless_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_macbless_SOURCES)
+CLEANFILES += $(nodist_holy_macbless_SOURCES)
+if COND_HAVE_EXEC
+bin_PROGRAMS += holy-mkrescue
+if COND_MAN_PAGES
+man_MANS += holy-mkrescue.1
+
+holy-mkrescue.1: holy-mkrescue 
+	chmod a+x holy-mkrescue
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-mkrescue.h2m -o $@ holy-mkrescue
+	
+CLEANFILES += holy-mkrescue.1
+endif
+holy_mkrescue_SOURCES  = util/holy-mkrescue.c util/render-label.c util/glue-efi.c util/mkimage.c util/holy-mkimage32.c util/holy-mkimage64.c util/holy-install-common.c util/setup_bios.c util/setup_sparc.c holy-core/lib/reed_solomon.c holy-core/osdep/random.c holy-core/osdep/ofpath.c holy-core/osdep/platform.c holy-core/osdep/platform_unix.c holy-core/osdep/compress.c util/editenv.c holy-core/osdep/blocklist.c holy-core/osdep/config.c util/config.c holy-core/kern/emu/hostfs.c holy-core/disk/host.c util/resolve.c holy-core/kern/emu/argp_common.c holy-core/osdep/init.c 
+nodist_holy_mkrescue_SOURCES  = 
+holy_mkrescue_LDADD  = $(LIBLZMA) libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_mkrescue_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_mkrescue_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_mkrescue_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_mkrescue_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += holy-core/osdep/unix/compress.c holy-core/osdep/basic/compress.c 
+BUILT_SOURCES += $(nodist_holy_mkrescue_SOURCES)
+CLEANFILES += $(nodist_holy_mkrescue_SOURCES)
+endif COND_HAVE_EXEC
+bin_PROGRAMS += holy-mkstandalone
+if COND_MAN_PAGES
+man_MANS += holy-mkstandalone.1
+
+holy-mkstandalone.1: holy-mkstandalone 
+	chmod a+x holy-mkstandalone
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-mkstandalone.h2m -o $@ holy-mkstandalone
+	
+CLEANFILES += holy-mkstandalone.1
+endif
+holy_mkstandalone_SOURCES  = util/holy-mkstandalone.c util/render-label.c util/glue-efi.c util/mkimage.c util/holy-mkimage32.c util/holy-mkimage64.c util/holy-install-common.c util/setup_bios.c util/setup_sparc.c holy-core/lib/reed_solomon.c holy-core/osdep/random.c holy-core/osdep/ofpath.c holy-core/osdep/platform.c holy-core/osdep/platform_unix.c holy-core/osdep/compress.c util/editenv.c holy-core/osdep/blocklist.c holy-core/osdep/config.c util/config.c holy-core/kern/emu/hostfs.c holy-core/disk/host.c util/resolve.c holy-core/kern/emu/argp_common.c holy-core/osdep/init.c 
+nodist_holy_mkstandalone_SOURCES  = 
+holy_mkstandalone_LDADD  = $(LIBLZMA) libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_mkstandalone_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_mkstandalone_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_mkstandalone_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_mkstandalone_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += holy-core/osdep/linux/platform.c holy-core/osdep/windows/platform.c holy-core/osdep/basic/platform.c holy-core/osdep/basic/no_platform.c holy-core/osdep/unix/platform.c 
+BUILT_SOURCES += $(nodist_holy_mkstandalone_SOURCES)
+CLEANFILES += $(nodist_holy_mkstandalone_SOURCES)
+sbin_PROGRAMS += holy-install
+if COND_MAN_PAGES
+man_MANS += holy-install.8
+
+holy-install.8: holy-install 
+	chmod a+x holy-install
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=8 -i $(top_srcdir)/docs/man/holy-install.h2m -o $@ holy-install
+	
+CLEANFILES += holy-install.8
+endif
+holy_install_SOURCES  = util/holy-install.c util/probe.c util/mkimage.c util/holy-mkimage32.c util/holy-mkimage64.c util/holy-install-common.c util/setup_bios.c util/setup_sparc.c holy-core/lib/reed_solomon.c holy-core/osdep/random.c holy-core/osdep/ofpath.c holy-core/osdep/platform.c holy-core/osdep/platform_unix.c holy-core/osdep/compress.c util/editenv.c holy-core/osdep/blocklist.c holy-core/osdep/config.c util/config.c util/render-label.c holy-core/kern/emu/hostfs.c holy-core/disk/host.c util/resolve.c holy-core/kern/emu/argp_common.c holy-core/osdep/init.c 
+nodist_holy_install_SOURCES  = 
+holy_install_LDADD  = $(LIBLZMA) libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_install_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_install_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_install_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_install_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_install_SOURCES)
+CLEANFILES += $(nodist_holy_install_SOURCES)
+bin_PROGRAMS += holy-mknetdir
+if COND_MAN_PAGES
+man_MANS += holy-mknetdir.1
+
+holy-mknetdir.1: holy-mknetdir 
+	chmod a+x holy-mknetdir
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-mknetdir.h2m -o $@ holy-mknetdir
+	
+CLEANFILES += holy-mknetdir.1
+endif
+holy_mknetdir_SOURCES  = util/holy-mknetdir.c util/mkimage.c util/holy-mkimage32.c util/holy-mkimage64.c util/holy-install-common.c util/setup_bios.c util/setup_sparc.c holy-core/lib/reed_solomon.c holy-core/osdep/random.c holy-core/osdep/ofpath.c holy-core/osdep/platform.c holy-core/osdep/platform_unix.c holy-core/osdep/compress.c util/editenv.c holy-core/osdep/blocklist.c holy-core/osdep/config.c util/config.c util/resolve.c holy-core/kern/emu/argp_common.c holy-core/osdep/init.c 
+nodist_holy_mknetdir_SOURCES  = 
+holy_mknetdir_LDADD  = $(LIBLZMA) libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_mknetdir_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_mknetdir_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_mknetdir_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_mknetdir_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_mknetdir_SOURCES)
+CLEANFILES += $(nodist_holy_mknetdir_SOURCES)
+check_PROGRAMS += example_unit_test
+TESTS += example_unit_test
+example_unit_test_SOURCES  = tests/example_unit_test.c tests/lib/unit_test.c holy-core/kern/list.c holy-core/kern/misc.c holy-core/tests/lib/test.c 
+nodist_example_unit_test_SOURCES  = 
+example_unit_test_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+example_unit_test_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+example_unit_test_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+example_unit_test_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+example_unit_test_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_example_unit_test_SOURCES)
+CLEANFILES += $(nodist_example_unit_test_SOURCES)
+check_PROGRAMS += printf_test
+TESTS += printf_test
+printf_test_SOURCES  = tests/printf_unit_test.c tests/lib/unit_test.c holy-core/kern/list.c holy-core/kern/misc.c holy-core/tests/lib/test.c 
+nodist_printf_test_SOURCES  = 
+printf_test_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+printf_test_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+printf_test_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+printf_test_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+printf_test_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_printf_test_SOURCES)
+CLEANFILES += $(nodist_printf_test_SOURCES)
+check_PROGRAMS += date_test
+TESTS += date_test
+date_test_SOURCES  = tests/date_unit_test.c tests/lib/unit_test.c holy-core/kern/list.c holy-core/kern/misc.c holy-core/tests/lib/test.c 
+nodist_date_test_SOURCES  = 
+date_test_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+date_test_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+date_test_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+date_test_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+date_test_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_date_test_SOURCES)
+CLEANFILES += $(nodist_date_test_SOURCES)
+if COND_HAVE_CXX
+check_PROGRAMS += priority_queue_unit_test
+TESTS += priority_queue_unit_test
+priority_queue_unit_test_SOURCES  = tests/priority_queue_unit_test.cc tests/lib/unit_test.c holy-core/kern/list.c holy-core/kern/misc.c holy-core/tests/lib/test.c holy-core/lib/priority_queue.c 
+nodist_priority_queue_unit_test_SOURCES  = 
+priority_queue_unit_test_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+priority_queue_unit_test_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+priority_queue_unit_test_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+priority_queue_unit_test_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+priority_queue_unit_test_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_priority_queue_unit_test_SOURCES)
+CLEANFILES += $(nodist_priority_queue_unit_test_SOURCES)
+endif COND_HAVE_CXX
+check_PROGRAMS += cmp_test
+TESTS += cmp_test
+cmp_test_SOURCES  = tests/cmp_unit_test.c tests/lib/unit_test.c holy-core/kern/list.c holy-core/kern/misc.c holy-core/tests/lib/test.c 
+nodist_cmp_test_SOURCES  = 
+cmp_test_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+cmp_test_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+cmp_test_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+cmp_test_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+cmp_test_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_cmp_test_SOURCES)
+CLEANFILES += $(nodist_cmp_test_SOURCES)
+check_PROGRAMS += gpt_unit_test
+TESTS += gpt_unit_test
+gpt_unit_test_SOURCES  = tests/gpt_unit_test.c tests/lib/unit_test.c holy-core/commands/search_part_label.c holy-core/commands/search_part_uuid.c holy-core/commands/search_disk_uuid.c holy-core/disk/host.c holy-core/kern/emu/hostfs.c holy-core/lib/gpt.c holy-core/tests/lib/test.c 
+nodist_gpt_unit_test_SOURCES  = 
+gpt_unit_test_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+gpt_unit_test_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+gpt_unit_test_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+gpt_unit_test_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+gpt_unit_test_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_gpt_unit_test_SOURCES)
+CLEANFILES += $(nodist_gpt_unit_test_SOURCES)
+bin_PROGRAMS += holy-menulst2cfg
+if COND_MAN_PAGES
+man_MANS += holy-menulst2cfg.1
+
+holy-menulst2cfg.1: holy-menulst2cfg 
+	chmod a+x holy-menulst2cfg
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-menulst2cfg.h2m -o $@ holy-menulst2cfg
+	
+CLEANFILES += holy-menulst2cfg.1
+endif
+holy_menulst2cfg_SOURCES  = util/holy-menulst2cfg.c holy-core/lib/legacy_parse.c holy-core/lib/i386/pc/vesa_modes_table.c holy-core/osdep/init.c 
+nodist_holy_menulst2cfg_SOURCES  = 
+holy_menulst2cfg_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_menulst2cfg_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_menulst2cfg_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_menulst2cfg_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_menulst2cfg_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_menulst2cfg_SOURCES)
+CLEANFILES += $(nodist_holy_menulst2cfg_SOURCES)
+bin_PROGRAMS += holy-syslinux2cfg
+if COND_MAN_PAGES
+man_MANS += holy-syslinux2cfg.1
+
+holy-syslinux2cfg.1: holy-syslinux2cfg 
+	chmod a+x holy-syslinux2cfg
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-syslinux2cfg.h2m -o $@ holy-syslinux2cfg
+	
+CLEANFILES += holy-syslinux2cfg.1
+endif
+holy_syslinux2cfg_SOURCES  = util/holy-syslinux2cfg.c holy-core/lib/syslinux_parse.c holy-core/lib/getline.c holy-core/osdep/init.c holy-core/kern/emu/hostfs.c holy-core/disk/host.c holy-core/kern/emu/argp_common.c 
+nodist_holy_syslinux2cfg_SOURCES  = 
+holy_syslinux2cfg_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_syslinux2cfg_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_syslinux2cfg_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_syslinux2cfg_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_syslinux2cfg_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_syslinux2cfg_SOURCES)
+CLEANFILES += $(nodist_holy_syslinux2cfg_SOURCES)
+bin_PROGRAMS += holy-glue-efi
+if COND_MAN_PAGES
+man_MANS += holy-glue-efi.1
+
+holy-glue-efi.1: holy-glue-efi 
+	chmod a+x holy-glue-efi
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-glue-efi.h2m -o $@ holy-glue-efi
+	
+CLEANFILES += holy-glue-efi.1
+endif
+holy_glue_efi_SOURCES  = util/holy-glue-efi.c util/glue-efi.c holy-core/kern/emu/argp_common.c holy-core/osdep/init.c 
+nodist_holy_glue_efi_SOURCES  = 
+holy_glue_efi_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_glue_efi_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_glue_efi_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_glue_efi_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_glue_efi_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_glue_efi_SOURCES)
+CLEANFILES += $(nodist_holy_glue_efi_SOURCES)
+bin_PROGRAMS += holy-render-label
+if COND_MAN_PAGES
+man_MANS += holy-render-label.1
+
+holy-render-label.1: holy-render-label 
+	chmod a+x holy-render-label
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-render-label.h2m -o $@ holy-render-label
+	
+CLEANFILES += holy-render-label.1
+endif
+holy_render_label_SOURCES  = util/holy-render-label.c util/render-label.c holy-core/kern/emu/argp_common.c holy-core/kern/emu/hostfs.c holy-core/disk/host.c holy-core/osdep/init.c 
+nodist_holy_render_label_SOURCES  = 
+holy_render_label_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_render_label_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_render_label_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_render_label_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_render_label_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_render_label_SOURCES)
+CLEANFILES += $(nodist_holy_render_label_SOURCES)
+bin_PROGRAMS += holy-file
+if COND_MAN_PAGES
+man_MANS += holy-file.1
+
+holy-file.1: holy-file 
+	chmod a+x holy-file
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-file.h2m -o $@ holy-file
+	
+CLEANFILES += holy-file.1
+endif
+holy_file_SOURCES  = util/holy-file.c util/render-label.c holy-core/commands/file.c holy-core/commands/file32.c holy-core/commands/file64.c holy-core/loader/i386/xen_file.c holy-core/loader/i386/xen_file32.c holy-core/loader/i386/xen_file64.c holy-core/io/offset.c holy-core/kern/elf.c holy-core/loader/lzss.c holy-core/loader/macho.c holy-core/loader/macho32.c holy-core/loader/macho64.c holy-core/kern/emu/hostfs.c holy-core/disk/host.c holy-core/osdep/init.c 
+nodist_holy_file_SOURCES  = 
+holy_file_LDADD  = libholymods.a libholygcry.a libholykern.a holy-core/gnulib/libgnu.a $(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) 
+holy_file_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_PROGRAM) 
+holy_file_LDFLAGS  = $(AM_LDFLAGS) $(LDFLAGS_PROGRAM) 
+holy_file_CPPFLAGS  = $(AM_CPPFLAGS) $(CPPFLAGS_PROGRAM) 
+holy_file_CCASFLAGS  = $(AM_CCASFLAGS) $(CCASFLAGS_PROGRAM) 
+dist_noinst_DATA += 
+BUILT_SOURCES += $(nodist_holy_file_SOURCES)
+CLEANFILES += $(nodist_holy_file_SOURCES)
+holyconf_SCRIPTS += 00_header
+
+00_header: $(top_builddir)/config.status util/holy.d/00_header.in 
+	(for x in util/holy.d/00_header.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x 00_header
+	
+CLEANFILES += 00_header
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy.d/00_header.in 
+if COND_HOST_WINDOWS
+holyconf_SCRIPTS += 10_windows
+
+10_windows: $(top_builddir)/config.status util/holy.d/10_windows.in 
+	(for x in util/holy.d/10_windows.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x 10_windows
+	
+CLEANFILES += 10_windows
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy.d/10_windows.in 
+endif COND_HOST_WINDOWS
+if COND_HOST_HURD
+holyconf_SCRIPTS += 10_hurd
+
+10_hurd: $(top_builddir)/config.status util/holy.d/10_hurd.in 
+	(for x in util/holy.d/10_hurd.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x 10_hurd
+	
+CLEANFILES += 10_hurd
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy.d/10_hurd.in 
+endif COND_HOST_HURD
+if COND_HOST_KFREEBSD
+holyconf_SCRIPTS += 10_kfreebsd
+
+10_kfreebsd: $(top_builddir)/config.status util/holy.d/10_kfreebsd.in 
+	(for x in util/holy.d/10_kfreebsd.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x 10_kfreebsd
+	
+CLEANFILES += 10_kfreebsd
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy.d/10_kfreebsd.in 
+endif COND_HOST_KFREEBSD
+if COND_HOST_ILLUMOS
+holyconf_SCRIPTS += 10_illumos
+
+10_illumos: $(top_builddir)/config.status util/holy.d/10_illumos.in 
+	(for x in util/holy.d/10_illumos.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x 10_illumos
+	
+CLEANFILES += 10_illumos
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy.d/10_illumos.in 
+endif COND_HOST_ILLUMOS
+if COND_HOST_NETBSD
+holyconf_SCRIPTS += 10_netbsd
+
+10_netbsd: $(top_builddir)/config.status util/holy.d/10_netbsd.in 
+	(for x in util/holy.d/10_netbsd.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x 10_netbsd
+	
+CLEANFILES += 10_netbsd
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy.d/10_netbsd.in 
+endif COND_HOST_NETBSD
+if COND_HOST_LINUX
+holyconf_SCRIPTS += 10_linux
+
+10_linux: $(top_builddir)/config.status util/holy.d/10_linux.in 
+	(for x in util/holy.d/10_linux.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x 10_linux
+	
+CLEANFILES += 10_linux
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy.d/10_linux.in 
+endif COND_HOST_LINUX
+if COND_HOST_XNU
+holyconf_SCRIPTS += 10_xnu
+
+10_xnu: $(top_builddir)/config.status util/holy.d/10_xnu.in 
+	(for x in util/holy.d/10_xnu.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x 10_xnu
+	
+CLEANFILES += 10_xnu
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy.d/10_xnu.in 
+endif COND_HOST_XNU
+if COND_HOST_LINUX
+holyconf_SCRIPTS += 20_linux_xen
+
+20_linux_xen: $(top_builddir)/config.status util/holy.d/20_linux_xen.in 
+	(for x in util/holy.d/20_linux_xen.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x 20_linux_xen
+	
+CLEANFILES += 20_linux_xen
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy.d/20_linux_xen.in 
+endif COND_HOST_LINUX
+holyconf_SCRIPTS += 30_os-prober
+
+30_os-prober: $(top_builddir)/config.status util/holy.d/30_os-prober.in 
+	(for x in util/holy.d/30_os-prober.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x 30_os-prober
+	
+CLEANFILES += 30_os-prober
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy.d/30_os-prober.in 
+holyconf_SCRIPTS += 40_custom
+
+40_custom: $(top_builddir)/config.status util/holy.d/40_custom.in 
+	(for x in util/holy.d/40_custom.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x 40_custom
+	
+CLEANFILES += 40_custom
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy.d/40_custom.in 
+holyconf_SCRIPTS += 41_custom
+
+41_custom: $(top_builddir)/config.status util/holy.d/41_custom.in 
+	(for x in util/holy.d/41_custom.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x 41_custom
+	
+CLEANFILES += 41_custom
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy.d/41_custom.in 
+sbin_SCRIPTS += holy-mkconfig
+if COND_MAN_PAGES
+man_MANS += holy-mkconfig.8
+
+holy-mkconfig.8: holy-mkconfig holy-mkconfig_lib
+	chmod a+x holy-mkconfig
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=8 -i $(top_srcdir)/docs/man/holy-mkconfig.h2m -o $@ holy-mkconfig
+	
+CLEANFILES += holy-mkconfig.8
+endif
+
+holy-mkconfig: $(top_builddir)/config.status util/holy-mkconfig.in 
+	(for x in util/holy-mkconfig.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy-mkconfig
+	
+CLEANFILES += holy-mkconfig
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy-mkconfig.in 
+sbin_SCRIPTS += holy-set-default
+if COND_MAN_PAGES
+man_MANS += holy-set-default.8
+
+holy-set-default.8: holy-set-default holy-mkconfig_lib
+	chmod a+x holy-set-default
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=8 -i $(top_srcdir)/docs/man/holy-set-default.h2m -o $@ holy-set-default
+	
+CLEANFILES += holy-set-default.8
+endif
+
+holy-set-default: $(top_builddir)/config.status util/holy-set-default.in 
+	(for x in util/holy-set-default.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy-set-default
+	
+CLEANFILES += holy-set-default
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy-set-default.in 
+sbin_SCRIPTS += holy-reboot
+if COND_MAN_PAGES
+man_MANS += holy-reboot.8
+
+holy-reboot.8: holy-reboot holy-mkconfig_lib
+	chmod a+x holy-reboot
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=8 -i $(top_srcdir)/docs/man/holy-reboot.h2m -o $@ holy-reboot
+	
+CLEANFILES += holy-reboot.8
+endif
+
+holy-reboot: $(top_builddir)/config.status util/holy-reboot.in 
+	(for x in util/holy-reboot.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy-reboot
+	
+CLEANFILES += holy-reboot
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy-reboot.in 
+noinst_SCRIPTS += holy-mkconfig_lib
+
+holy-mkconfig_lib: $(top_builddir)/config.status util/holy-mkconfig_lib.in 
+	(for x in util/holy-mkconfig_lib.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy-mkconfig_lib
+	
+CLEANFILES += holy-mkconfig_lib
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy-mkconfig_lib.in 
+bin_SCRIPTS += holy-kbdcomp
+if COND_MAN_PAGES
+man_MANS += holy-kbdcomp.1
+
+holy-kbdcomp.1: holy-kbdcomp holy-mkconfig_lib
+	chmod a+x holy-kbdcomp
+	PATH=$(builddir):$$PATH pkgdatadir=$(builddir) $(HELP2MAN) --section=1 -i $(top_srcdir)/docs/man/holy-kbdcomp.h2m -o $@ holy-kbdcomp
+	
+CLEANFILES += holy-kbdcomp.1
+endif
+
+holy-kbdcomp: $(top_builddir)/config.status util/holy-kbdcomp.in 
+	(for x in util/holy-kbdcomp.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy-kbdcomp
+	
+CLEANFILES += holy-kbdcomp
+EXTRA_DIST += 
+dist_noinst_DATA += util/holy-kbdcomp.in 
+noinst_SCRIPTS += holy-shell
+
+holy-shell: $(top_builddir)/config.status tests/util/holy-shell.in 
+	(for x in tests/util/holy-shell.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy-shell
+	
+CLEANFILES += holy-shell
+EXTRA_DIST += 
+dist_noinst_DATA += tests/util/holy-shell.in 
+noinst_SCRIPTS += holy-shell-tester
+
+holy-shell-tester: $(top_builddir)/config.status tests/util/holy-shell-tester.in 
+	(for x in tests/util/holy-shell-tester.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy-shell-tester
+	
+CLEANFILES += holy-shell-tester
+EXTRA_DIST += 
+dist_noinst_DATA += tests/util/holy-shell-tester.in 
+noinst_SCRIPTS += holy-fs-tester
+
+holy-fs-tester: $(top_builddir)/config.status tests/util/holy-fs-tester.in garbage-gen$(BUILD_EXEEXT) 
+	(for x in tests/util/holy-fs-tester.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy-fs-tester
+	
+CLEANFILES += holy-fs-tester
+EXTRA_DIST += 
+dist_noinst_DATA += tests/util/holy-fs-tester.in 
+check_SCRIPTS += ext234_test
+TESTS += ext234_test
+
+ext234_test: $(top_builddir)/config.status tests/ext234_test.in 
+	(for x in tests/ext234_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x ext234_test
+	
+CLEANFILES += ext234_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/ext234_test.in 
+check_SCRIPTS += squashfs_test
+TESTS += squashfs_test
+
+squashfs_test: $(top_builddir)/config.status tests/squashfs_test.in 
+	(for x in tests/squashfs_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x squashfs_test
+	
+CLEANFILES += squashfs_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/squashfs_test.in 
+check_SCRIPTS += iso9660_test
+TESTS += iso9660_test
+
+iso9660_test: $(top_builddir)/config.status tests/iso9660_test.in 
+	(for x in tests/iso9660_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x iso9660_test
+	
+CLEANFILES += iso9660_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/iso9660_test.in 
+check_SCRIPTS += hfsplus_test
+TESTS += hfsplus_test
+
+hfsplus_test: $(top_builddir)/config.status tests/hfsplus_test.in 
+	(for x in tests/hfsplus_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x hfsplus_test
+	
+CLEANFILES += hfsplus_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/hfsplus_test.in 
+check_SCRIPTS += ntfs_test
+TESTS += ntfs_test
+
+ntfs_test: $(top_builddir)/config.status tests/ntfs_test.in 
+	(for x in tests/ntfs_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x ntfs_test
+	
+CLEANFILES += ntfs_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/ntfs_test.in 
+check_SCRIPTS += reiserfs_test
+TESTS += reiserfs_test
+
+reiserfs_test: $(top_builddir)/config.status tests/reiserfs_test.in 
+	(for x in tests/reiserfs_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x reiserfs_test
+	
+CLEANFILES += reiserfs_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/reiserfs_test.in 
+check_SCRIPTS += fat_test
+TESTS += fat_test
+
+fat_test: $(top_builddir)/config.status tests/fat_test.in 
+	(for x in tests/fat_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x fat_test
+	
+CLEANFILES += fat_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/fat_test.in 
+check_SCRIPTS += minixfs_test
+TESTS += minixfs_test
+
+minixfs_test: $(top_builddir)/config.status tests/minixfs_test.in 
+	(for x in tests/minixfs_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x minixfs_test
+	
+CLEANFILES += minixfs_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/minixfs_test.in 
+check_SCRIPTS += xfs_test
+TESTS += xfs_test
+
+xfs_test: $(top_builddir)/config.status tests/xfs_test.in 
+	(for x in tests/xfs_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x xfs_test
+	
+CLEANFILES += xfs_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/xfs_test.in 
+check_SCRIPTS += nilfs2_test
+TESTS += nilfs2_test
+
+nilfs2_test: $(top_builddir)/config.status tests/nilfs2_test.in 
+	(for x in tests/nilfs2_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x nilfs2_test
+	
+CLEANFILES += nilfs2_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/nilfs2_test.in 
+check_SCRIPTS += romfs_test
+TESTS += romfs_test
+
+romfs_test: $(top_builddir)/config.status tests/romfs_test.in 
+	(for x in tests/romfs_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x romfs_test
+	
+CLEANFILES += romfs_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/romfs_test.in 
+check_SCRIPTS += exfat_test
+TESTS += exfat_test
+
+exfat_test: $(top_builddir)/config.status tests/exfat_test.in 
+	(for x in tests/exfat_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x exfat_test
+	
+CLEANFILES += exfat_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/exfat_test.in 
+check_SCRIPTS += tar_test
+TESTS += tar_test
+
+tar_test: $(top_builddir)/config.status tests/tar_test.in 
+	(for x in tests/tar_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x tar_test
+	
+CLEANFILES += tar_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/tar_test.in 
+check_SCRIPTS += udf_test
+TESTS += udf_test
+
+udf_test: $(top_builddir)/config.status tests/udf_test.in 
+	(for x in tests/udf_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x udf_test
+	
+CLEANFILES += udf_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/udf_test.in 
+check_SCRIPTS += hfs_test
+TESTS += hfs_test
+
+hfs_test: $(top_builddir)/config.status tests/hfs_test.in 
+	(for x in tests/hfs_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x hfs_test
+	
+CLEANFILES += hfs_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/hfs_test.in 
+check_SCRIPTS += jfs_test
+TESTS += jfs_test
+
+jfs_test: $(top_builddir)/config.status tests/jfs_test.in 
+	(for x in tests/jfs_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x jfs_test
+	
+CLEANFILES += jfs_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/jfs_test.in 
+check_SCRIPTS += btrfs_test
+TESTS += btrfs_test
+
+btrfs_test: $(top_builddir)/config.status tests/btrfs_test.in 
+	(for x in tests/btrfs_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x btrfs_test
+	
+CLEANFILES += btrfs_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/btrfs_test.in 
+check_SCRIPTS += zfs_test
+TESTS += zfs_test
+
+zfs_test: $(top_builddir)/config.status tests/zfs_test.in 
+	(for x in tests/zfs_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x zfs_test
+	
+CLEANFILES += zfs_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/zfs_test.in 
+check_SCRIPTS += cpio_test
+TESTS += cpio_test
+
+cpio_test: $(top_builddir)/config.status tests/cpio_test.in 
+	(for x in tests/cpio_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x cpio_test
+	
+CLEANFILES += cpio_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/cpio_test.in 
+check_SCRIPTS += example_scripted_test
+TESTS += example_scripted_test
+
+example_scripted_test: $(top_builddir)/config.status tests/example_scripted_test.in 
+	(for x in tests/example_scripted_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x example_scripted_test
+	
+CLEANFILES += example_scripted_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/example_scripted_test.in 
+check_SCRIPTS += gettext_strings_test
+TESTS += gettext_strings_test
+
+gettext_strings_test: $(top_builddir)/config.status tests/gettext_strings_test.in 
+	(for x in tests/gettext_strings_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x gettext_strings_test
+	
+CLEANFILES += gettext_strings_test
+EXTRA_DIST += po/exclude.pot 
+dist_noinst_DATA += tests/gettext_strings_test.in 
+check_SCRIPTS += pata_test
+TESTS += pata_test
+
+pata_test: $(top_builddir)/config.status tests/pata_test.in 
+	(for x in tests/pata_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x pata_test
+	
+CLEANFILES += pata_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/pata_test.in 
+check_SCRIPTS += ahci_test
+TESTS += ahci_test
+
+ahci_test: $(top_builddir)/config.status tests/ahci_test.in 
+	(for x in tests/ahci_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x ahci_test
+	
+CLEANFILES += ahci_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/ahci_test.in 
+check_SCRIPTS += uhci_test
+TESTS += uhci_test
+
+uhci_test: $(top_builddir)/config.status tests/uhci_test.in 
+	(for x in tests/uhci_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x uhci_test
+	
+CLEANFILES += uhci_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/uhci_test.in 
+check_SCRIPTS += ohci_test
+TESTS += ohci_test
+
+ohci_test: $(top_builddir)/config.status tests/ohci_test.in 
+	(for x in tests/ohci_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x ohci_test
+	
+CLEANFILES += ohci_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/ohci_test.in 
+check_SCRIPTS += ehci_test
+TESTS += ehci_test
+
+ehci_test: $(top_builddir)/config.status tests/ehci_test.in 
+	(for x in tests/ehci_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x ehci_test
+	
+CLEANFILES += ehci_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/ehci_test.in 
+check_SCRIPTS += example_holy_script_test
+TESTS += example_holy_script_test
+
+example_holy_script_test: $(top_builddir)/config.status tests/example_holy_script_test.in 
+	(for x in tests/example_holy_script_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x example_holy_script_test
+	
+CLEANFILES += example_holy_script_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/example_holy_script_test.in 
+check_SCRIPTS += holy_script_eval
+TESTS += holy_script_eval
+
+holy_script_eval: $(top_builddir)/config.status tests/holy_script_eval.in 
+	(for x in tests/holy_script_eval.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_eval
+	
+CLEANFILES += holy_script_eval
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_eval.in 
+check_SCRIPTS += holy_script_test
+TESTS += holy_script_test
+
+holy_script_test: $(top_builddir)/config.status tests/holy_script_test.in 
+	(for x in tests/holy_script_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_test
+	
+CLEANFILES += holy_script_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_test.in 
+check_SCRIPTS += holy_script_echo1
+TESTS += holy_script_echo1
+
+holy_script_echo1: $(top_builddir)/config.status tests/holy_script_echo1.in 
+	(for x in tests/holy_script_echo1.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_echo1
+	
+CLEANFILES += holy_script_echo1
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_echo1.in 
+check_SCRIPTS += holy_script_leading_whitespace
+TESTS += holy_script_leading_whitespace
+
+holy_script_leading_whitespace: $(top_builddir)/config.status tests/holy_script_leading_whitespace.in 
+	(for x in tests/holy_script_leading_whitespace.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_leading_whitespace
+	
+CLEANFILES += holy_script_leading_whitespace
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_leading_whitespace.in 
+check_SCRIPTS += holy_script_echo_keywords
+TESTS += holy_script_echo_keywords
+
+holy_script_echo_keywords: $(top_builddir)/config.status tests/holy_script_echo_keywords.in 
+	(for x in tests/holy_script_echo_keywords.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_echo_keywords
+	
+CLEANFILES += holy_script_echo_keywords
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_echo_keywords.in 
+check_SCRIPTS += holy_script_vars1
+TESTS += holy_script_vars1
+
+holy_script_vars1: $(top_builddir)/config.status tests/holy_script_vars1.in 
+	(for x in tests/holy_script_vars1.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_vars1
+	
+CLEANFILES += holy_script_vars1
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_vars1.in 
+check_SCRIPTS += holy_script_for1
+TESTS += holy_script_for1
+
+holy_script_for1: $(top_builddir)/config.status tests/holy_script_for1.in 
+	(for x in tests/holy_script_for1.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_for1
+	
+CLEANFILES += holy_script_for1
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_for1.in 
+check_SCRIPTS += holy_script_while1
+TESTS += holy_script_while1
+
+holy_script_while1: $(top_builddir)/config.status tests/holy_script_while1.in 
+	(for x in tests/holy_script_while1.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_while1
+	
+CLEANFILES += holy_script_while1
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_while1.in 
+check_SCRIPTS += holy_script_if
+TESTS += holy_script_if
+
+holy_script_if: $(top_builddir)/config.status tests/holy_script_if.in 
+	(for x in tests/holy_script_if.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_if
+	
+CLEANFILES += holy_script_if
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_if.in 
+check_SCRIPTS += holy_script_blanklines
+TESTS += holy_script_blanklines
+
+holy_script_blanklines: $(top_builddir)/config.status tests/holy_script_blanklines.in 
+	(for x in tests/holy_script_blanklines.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_blanklines
+	
+CLEANFILES += holy_script_blanklines
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_blanklines.in 
+check_SCRIPTS += holy_script_final_semicolon
+TESTS += holy_script_final_semicolon
+
+holy_script_final_semicolon: $(top_builddir)/config.status tests/holy_script_final_semicolon.in 
+	(for x in tests/holy_script_final_semicolon.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_final_semicolon
+	
+CLEANFILES += holy_script_final_semicolon
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_final_semicolon.in 
+check_SCRIPTS += holy_script_dollar
+TESTS += holy_script_dollar
+
+holy_script_dollar: $(top_builddir)/config.status tests/holy_script_dollar.in 
+	(for x in tests/holy_script_dollar.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_dollar
+	
+CLEANFILES += holy_script_dollar
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_dollar.in 
+check_SCRIPTS += holy_script_comments
+TESTS += holy_script_comments
+
+holy_script_comments: $(top_builddir)/config.status tests/holy_script_comments.in 
+	(for x in tests/holy_script_comments.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_comments
+	
+CLEANFILES += holy_script_comments
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_comments.in 
+check_SCRIPTS += holy_script_functions
+TESTS += holy_script_functions
+
+holy_script_functions: $(top_builddir)/config.status tests/holy_script_functions.in 
+	(for x in tests/holy_script_functions.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_functions
+	
+CLEANFILES += holy_script_functions
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_functions.in 
+check_SCRIPTS += holy_script_break
+TESTS += holy_script_break
+
+holy_script_break: $(top_builddir)/config.status tests/holy_script_break.in 
+	(for x in tests/holy_script_break.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_break
+	
+CLEANFILES += holy_script_break
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_break.in 
+check_SCRIPTS += holy_script_continue
+TESTS += holy_script_continue
+
+holy_script_continue: $(top_builddir)/config.status tests/holy_script_continue.in 
+	(for x in tests/holy_script_continue.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_continue
+	
+CLEANFILES += holy_script_continue
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_continue.in 
+check_SCRIPTS += holy_script_shift
+TESTS += holy_script_shift
+
+holy_script_shift: $(top_builddir)/config.status tests/holy_script_shift.in 
+	(for x in tests/holy_script_shift.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_shift
+	
+CLEANFILES += holy_script_shift
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_shift.in 
+check_SCRIPTS += holy_script_blockarg
+TESTS += holy_script_blockarg
+
+holy_script_blockarg: $(top_builddir)/config.status tests/holy_script_blockarg.in 
+	(for x in tests/holy_script_blockarg.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_blockarg
+	
+CLEANFILES += holy_script_blockarg
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_blockarg.in 
+check_SCRIPTS += holy_script_setparams
+TESTS += holy_script_setparams
+
+holy_script_setparams: $(top_builddir)/config.status tests/holy_script_setparams.in 
+	(for x in tests/holy_script_setparams.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_setparams
+	
+CLEANFILES += holy_script_setparams
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_setparams.in 
+check_SCRIPTS += holy_script_return
+TESTS += holy_script_return
+
+holy_script_return: $(top_builddir)/config.status tests/holy_script_return.in 
+	(for x in tests/holy_script_return.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_return
+	
+CLEANFILES += holy_script_return
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_return.in 
+check_SCRIPTS += holy_cmd_regexp
+TESTS += holy_cmd_regexp
+
+holy_cmd_regexp: $(top_builddir)/config.status tests/holy_cmd_regexp.in 
+	(for x in tests/holy_cmd_regexp.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_cmd_regexp
+	
+CLEANFILES += holy_cmd_regexp
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_cmd_regexp.in 
+check_SCRIPTS += holy_cmd_date
+TESTS += holy_cmd_date
+
+holy_cmd_date: $(top_builddir)/config.status tests/holy_cmd_date.in 
+	(for x in tests/holy_cmd_date.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_cmd_date
+	
+CLEANFILES += holy_cmd_date
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_cmd_date.in 
+check_SCRIPTS += holy_cmd_set_date
+TESTS += holy_cmd_set_date
+
+holy_cmd_set_date: $(top_builddir)/config.status tests/holy_cmd_set_date.in 
+	(for x in tests/holy_cmd_set_date.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_cmd_set_date
+	
+CLEANFILES += holy_cmd_set_date
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_cmd_set_date.in 
+check_SCRIPTS += holy_cmd_sleep
+TESTS += holy_cmd_sleep
+
+holy_cmd_sleep: $(top_builddir)/config.status tests/holy_cmd_sleep.in 
+	(for x in tests/holy_cmd_sleep.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_cmd_sleep
+	
+CLEANFILES += holy_cmd_sleep
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_cmd_sleep.in 
+check_SCRIPTS += holy_script_expansion
+TESTS += holy_script_expansion
+
+holy_script_expansion: $(top_builddir)/config.status tests/holy_script_expansion.in 
+	(for x in tests/holy_script_expansion.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_expansion
+	
+CLEANFILES += holy_script_expansion
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_expansion.in 
+check_SCRIPTS += holy_script_not
+TESTS += holy_script_not
+
+holy_script_not: $(top_builddir)/config.status tests/holy_script_not.in 
+	(for x in tests/holy_script_not.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_not
+	
+CLEANFILES += holy_script_not
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_not.in 
+check_SCRIPTS += holy_script_no_commands
+TESTS += holy_script_no_commands
+
+holy_script_no_commands: $(top_builddir)/config.status tests/holy_script_no_commands.in 
+	(for x in tests/holy_script_no_commands.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_no_commands
+	
+CLEANFILES += holy_script_no_commands
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_no_commands.in 
+check_SCRIPTS += partmap_test
+TESTS += partmap_test
+
+partmap_test: $(top_builddir)/config.status tests/partmap_test.in 
+	(for x in tests/partmap_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x partmap_test
+	
+CLEANFILES += partmap_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/partmap_test.in 
+check_SCRIPTS += hddboot_test
+TESTS += hddboot_test
+
+hddboot_test: $(top_builddir)/config.status tests/hddboot_test.in 
+	(for x in tests/hddboot_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x hddboot_test
+	
+CLEANFILES += hddboot_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/hddboot_test.in 
+check_SCRIPTS += fddboot_test
+TESTS += fddboot_test
+
+fddboot_test: $(top_builddir)/config.status tests/fddboot_test.in 
+	(for x in tests/fddboot_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x fddboot_test
+	
+CLEANFILES += fddboot_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/fddboot_test.in 
+check_SCRIPTS += cdboot_test
+TESTS += cdboot_test
+
+cdboot_test: $(top_builddir)/config.status tests/cdboot_test.in 
+	(for x in tests/cdboot_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x cdboot_test
+	
+CLEANFILES += cdboot_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/cdboot_test.in 
+check_SCRIPTS += netboot_test
+TESTS += netboot_test
+
+netboot_test: $(top_builddir)/config.status tests/netboot_test.in 
+	(for x in tests/netboot_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x netboot_test
+	
+CLEANFILES += netboot_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/netboot_test.in 
+check_SCRIPTS += pseries_test
+TESTS += pseries_test
+
+pseries_test: $(top_builddir)/config.status tests/pseries_test.in 
+	(for x in tests/pseries_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x pseries_test
+	
+CLEANFILES += pseries_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/pseries_test.in 
+check_SCRIPTS += core_compress_test
+TESTS += core_compress_test
+
+core_compress_test: $(top_builddir)/config.status tests/core_compress_test.in 
+	(for x in tests/core_compress_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x core_compress_test
+	
+CLEANFILES += core_compress_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/core_compress_test.in 
+check_SCRIPTS += xzcompress_test
+TESTS += xzcompress_test
+
+xzcompress_test: $(top_builddir)/config.status tests/xzcompress_test.in 
+	(for x in tests/xzcompress_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x xzcompress_test
+	
+CLEANFILES += xzcompress_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/xzcompress_test.in 
+check_SCRIPTS += gzcompress_test
+TESTS += gzcompress_test
+
+gzcompress_test: $(top_builddir)/config.status tests/gzcompress_test.in 
+	(for x in tests/gzcompress_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x gzcompress_test
+	
+CLEANFILES += gzcompress_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/gzcompress_test.in 
+check_SCRIPTS += lzocompress_test
+TESTS += lzocompress_test
+
+lzocompress_test: $(top_builddir)/config.status tests/lzocompress_test.in 
+	(for x in tests/lzocompress_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x lzocompress_test
+	
+CLEANFILES += lzocompress_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/lzocompress_test.in 
+check_SCRIPTS += holy_cmd_echo
+TESTS += holy_cmd_echo
+
+holy_cmd_echo: $(top_builddir)/config.status tests/holy_cmd_echo.in 
+	(for x in tests/holy_cmd_echo.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_cmd_echo
+	
+CLEANFILES += holy_cmd_echo
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_cmd_echo.in 
+check_SCRIPTS += help_test
+TESTS += help_test
+
+help_test: $(top_builddir)/config.status tests/help_test.in 
+	(for x in tests/help_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x help_test
+	
+CLEANFILES += help_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/help_test.in 
+check_SCRIPTS += holy_script_gettext
+TESTS += holy_script_gettext
+
+holy_script_gettext: $(top_builddir)/config.status tests/holy_script_gettext.in 
+	(for x in tests/holy_script_gettext.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_gettext
+	
+CLEANFILES += holy_script_gettext
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_gettext.in 
+check_SCRIPTS += holy_script_escape_comma
+TESTS += holy_script_escape_comma
+
+holy_script_escape_comma: $(top_builddir)/config.status tests/holy_script_escape_comma.in 
+	(for x in tests/holy_script_escape_comma.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_escape_comma
+	
+CLEANFILES += holy_script_escape_comma
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_escape_comma.in 
+check_SCRIPTS += holy_script_strcmp
+TESTS += holy_script_strcmp
+
+holy_script_strcmp: $(top_builddir)/config.status tests/holy_script_strcmp.in 
+	(for x in tests/holy_script_strcmp.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_script_strcmp
+	
+CLEANFILES += holy_script_strcmp
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_script_strcmp.in 
+check_SCRIPTS += test_sha512sum
+TESTS += test_sha512sum
+
+test_sha512sum: $(top_builddir)/config.status tests/test_sha512sum.in 
+	(for x in tests/test_sha512sum.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x test_sha512sum
+	
+CLEANFILES += test_sha512sum
+EXTRA_DIST += 
+dist_noinst_DATA += tests/test_sha512sum.in 
+check_SCRIPTS += test_unset
+TESTS += test_unset
+
+test_unset: $(top_builddir)/config.status tests/test_unset.in 
+	(for x in tests/test_unset.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x test_unset
+	
+CLEANFILES += test_unset
+EXTRA_DIST += 
+dist_noinst_DATA += tests/test_unset.in 
+check_SCRIPTS += holy_func_test
+TESTS += holy_func_test
+
+holy_func_test: $(top_builddir)/config.status tests/holy_func_test.in 
+	(for x in tests/holy_func_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_func_test
+	
+CLEANFILES += holy_func_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_func_test.in 
+check_SCRIPTS += holy_cmd_tr
+TESTS += holy_cmd_tr
+
+holy_cmd_tr: $(top_builddir)/config.status tests/holy_cmd_tr.in 
+	(for x in tests/holy_cmd_tr.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_cmd_tr
+	
+CLEANFILES += holy_cmd_tr
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_cmd_tr.in 
+check_SCRIPTS += gptrepair_test
+TESTS += gptrepair_test
+
+gptrepair_test: $(top_builddir)/config.status tests/gptrepair_test.in 
+	(for x in tests/gptrepair_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x gptrepair_test
+	
+CLEANFILES += gptrepair_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/gptrepair_test.in 
+check_SCRIPTS += gptprio_test
+TESTS += gptprio_test
+
+gptprio_test: $(top_builddir)/config.status tests/gptprio_test.in 
+	(for x in tests/gptprio_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x gptprio_test
+	
+CLEANFILES += gptprio_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/gptprio_test.in 
+check_SCRIPTS += file_filter_test
+TESTS += file_filter_test
+
+file_filter_test: $(top_builddir)/config.status tests/file_filter_test.in 
+	(for x in tests/file_filter_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x file_filter_test
+	
+CLEANFILES += file_filter_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/file_filter_test.in 
+check_SCRIPTS += holy_cmd_test
+TESTS += holy_cmd_test
+
+holy_cmd_test: $(top_builddir)/config.status tests/holy_cmd_test.in 
+	(for x in tests/holy_cmd_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x holy_cmd_test
+	
+CLEANFILES += holy_cmd_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/holy_cmd_test.in 
+check_SCRIPTS += syslinux_test
+TESTS += syslinux_test
+
+syslinux_test: $(top_builddir)/config.status tests/syslinux_test.in 
+	(for x in tests/syslinux_test.in ; do cat $(srcdir)/"$$x"; done) | $(top_builddir)/config.status --file=$@:-
+	chmod a+x syslinux_test
+	
+CLEANFILES += syslinux_test
+EXTRA_DIST += 
+dist_noinst_DATA += tests/syslinux_test.in 
+dist_holyconf_DATA += util/holy.d/README 
+dist_noinst_DATA += 

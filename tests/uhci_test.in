@@ -1,0 +1,37 @@
+#! /bin/sh
+
+set -e
+holyshell=@builddir@/holy-shell
+
+. "@builddir@/holy-core/modinfo.sh"
+
+case "${holy_modinfo_target_cpu}-${holy_modinfo_platform}" in
+    # PLATFORM: Don't mess with real devices when OS is active
+    *-emu)
+	exit 0;;
+    # FIXME: qemu gets bonito DMA wrong
+    mipsel-loongson)
+	exit 0;;
+    # PLATFORM: no USB on ARC and qemu-mips platforms
+    mips*-arc | mips*-qemu_mips)
+	exit 0;;
+    # FIXME: No native drivers are available for those
+    powerpc-ieee1275 | sparc64-ieee1275 | arm*-efi)
+	exit 0;;
+esac
+
+imgfile="`mktemp "${TMPDIR:-/tmp}/tmp.XXXXXXXXXX"`" || exit 1
+outfile="`mktemp "${TMPDIR:-/tmp}/tmp.XXXXXXXXXX"`" || exit 1
+
+echo "hello" > "$outfile"
+
+tar cf "$imgfile" "$outfile"
+
+if [ "$(echo "nativedisk; source '(usb0)/$outfile';" | "${holyshell}" --qemu-opts="-usb -usbdevice disk:$imgfile" | tail -n 1)" != "Hello World" ]; then
+   rm "$imgfile"
+   rm "$outfile"
+   exit 1
+fi
+
+rm "$imgfile"
+rm "$outfile"

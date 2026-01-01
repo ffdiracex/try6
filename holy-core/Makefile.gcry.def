@@ -1,0 +1,157 @@
+AutoGen definitions Makefile.tpl;
+
+module = {
+  name = gcry_arcfour;
+  common = lib/libgcrypt-holy/cipher/arcfour.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_blowfish;
+  common = lib/libgcrypt-holy/cipher/blowfish.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_camellia;
+  common = lib/libgcrypt-holy/cipher/camellia-glue.c;
+  common = lib/libgcrypt-holy/cipher/camellia.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_cast5;
+  common = lib/libgcrypt-holy/cipher/cast5.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_crc;
+  common = lib/libgcrypt-holy/cipher/crc.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_des;
+  common = lib/libgcrypt-holy/cipher/des.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_dsa;
+  common = lib/libgcrypt-holy/cipher/dsa.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_idea;
+  common = lib/libgcrypt-holy/cipher/idea.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_md4;
+  common = lib/libgcrypt-holy/cipher/md4.c;
+  cflags = '$(CFLAGS_GCRY) -Wno-cast-align';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_md5;
+  common = lib/libgcrypt-holy/cipher/md5.c;
+  cflags = '$(CFLAGS_GCRY) -Wno-cast-align';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_rfc2268;
+  common = lib/libgcrypt-holy/cipher/rfc2268.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_rijndael;
+  common = lib/libgcrypt-holy/cipher/rijndael.c;
+  cflags = '$(CFLAGS_GCRY) -Wno-cast-align';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_rmd160;
+  common = lib/libgcrypt-holy/cipher/rmd160.c;
+  cflags = '$(CFLAGS_GCRY) -Wno-cast-align';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_rsa;
+  common = lib/libgcrypt-holy/cipher/rsa.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_seed;
+  common = lib/libgcrypt-holy/cipher/seed.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_serpent;
+  common = lib/libgcrypt-holy/cipher/serpent.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_sha1;
+  common = lib/libgcrypt-holy/cipher/sha1.c;
+  cflags = '$(CFLAGS_GCRY) -Wno-cast-align';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_sha256;
+  common = lib/libgcrypt-holy/cipher/sha256.c;
+  cflags = '$(CFLAGS_GCRY) -Wno-cast-align';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_sha512;
+  common = lib/libgcrypt-holy/cipher/sha512.c;
+  cflags = '$(CFLAGS_GCRY) -Wno-cast-align';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_tiger;
+  common = lib/libgcrypt-holy/cipher/tiger.c;
+  cflags = '$(CFLAGS_GCRY) -Wno-cast-align';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_twofish;
+  common = lib/libgcrypt-holy/cipher/twofish.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+
+module = {
+  name = gcry_whirlpool;
+  common = lib/libgcrypt-holy/cipher/whirlpool.c;
+  cflags = '$(CFLAGS_GCRY)';
+  cppflags = '$(CPPFLAGS_GCRY)';
+};
+

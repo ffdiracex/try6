@@ -1,0 +1,3 @@
+#! @builddir@/holy-shell-tester --modules=echo
+
+echo "hello world"

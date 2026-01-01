@@ -1,0 +1,5 @@
+[NAME]
+holy-set-default \- set the saved default boot entry for holy
+[SEE ALSO]
+.BR holy-reboot (8),
+.BR holy-editenv (1)

@@ -1,0 +1,13 @@
+#! @builddir@/holy-shell-tester
+
+echo a###b
+echo a# #b
+
+echo #
+echo \#
+
+echo '#'
+echo "#"
+
+echo '\#'
+echo "\#"

@@ -1,0 +1,15 @@
+#! /bin/sh
+
+set -e
+holyshell=@builddir@/holy-shell
+
+. "@builddir@/holy-core/modinfo.sh"
+
+if ! which lzop >/dev/null 2>&1; then
+   echo "lzop not installed; cannot test lzo compression."
+   exit 77
+fi
+
+if [ "$(echo hello | "${holyshell}" --mkrescue-arg=--compress=lzo)" != "Hello World" ]; then
+   exit 1
+fi

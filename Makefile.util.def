@@ -1,0 +1,1382 @@
+AutoGen definitions Makefile.tpl;
+
+library = {
+  name = libholykern.a;
+  cflags = '$(CFLAGS_GNULIB)';
+  cppflags = '$(CPPFLAGS_GNULIB)';
+
+  common = util/misc.c;
+  common = holy-core/kern/command.c;
+  common = holy-core/kern/device.c;
+  common = holy-core/kern/disk.c;
+  common = holy-core/lib/disk.c;
+  common = util/getroot.c;
+  common = holy-core/osdep/unix/getroot.c;
+  common = holy-core/osdep/getroot.c;
+  common = holy-core/osdep/devmapper/getroot.c;
+  common = holy-core/osdep/relpath.c;
+  extra_dist = holy-core/kern/disk_common.c;
+  extra_dist = holy-core/osdep/unix/relpath.c;
+  extra_dist = holy-core/osdep/aros/relpath.c;
+  extra_dist = holy-core/osdep/windows/relpath.c;
+  common = holy-core/kern/emu/hostdisk.c;
+  common = holy-core/osdep/devmapper/hostdisk.c;
+  common = holy-core/osdep/hostdisk.c;
+  common = holy-core/osdep/unix/hostdisk.c;
+  common = holy-core/osdep/exec.c;
+  common = holy-core/osdep/sleep.c;
+  common = holy-core/osdep/password.c;
+  common = holy-core/kern/emu/misc.c;
+  common = holy-core/kern/emu/mm.c;
+  common = holy-core/kern/env.c;
+  common = holy-core/kern/err.c;
+  common = holy-core/kern/file.c;
+  common = holy-core/kern/fs.c;
+  common = holy-core/kern/list.c;
+  common = holy-core/kern/misc.c;
+  common = holy-core/kern/partition.c;
+  common = holy-core/lib/crypto.c;
+  common = holy-core/disk/luks.c;
+  common = holy-core/disk/geli.c;
+  common = holy-core/disk/cryptodisk.c;
+  common = holy-core/disk/AFSplitter.c;
+  common = holy-core/lib/pbkdf2.c;
+  common = holy-core/commands/extcmd.c;
+  common = holy-core/lib/arg.c;
+  common = holy-core/disk/ldm.c;
+  common = holy-core/disk/diskfilter.c;
+  common = holy-core/partmap/gpt.c;
+  common = holy-core/partmap/msdos.c;
+  common = holy-core/fs/proc.c;
+  common = holy-core/fs/archelp.c;
+};
+
+library = {
+  name = libholymods.a;
+  cflags = '-fno-builtin -Wno-undef';
+  cppflags = '-I$(top_srcdir)/holy-core/lib/minilzo -I$(srcdir)/holy-core/lib/xzembed -DMINILZO_HAVE_CONFIG_H';
+
+  common_nodist = holy_script.tab.c;
+  common_nodist = holy_script.yy.c;
+  common_nodist = libholy_a_init.c;
+  common_nodist = holy_script.yy.h;
+  common_nodist = holy_script.tab.h;
+
+  common = holy-core/commands/blocklist.c;
+  common = holy-core/commands/macbless.c;
+  common = holy-core/commands/xnu_uuid.c;
+  common = holy-core/commands/testload.c;
+  common = holy-core/commands/ls.c;
+  common = holy-core/disk/dmraid_nvidia.c;
+  common = holy-core/disk/loopback.c;
+  common = holy-core/disk/lvm.c;
+  common = holy-core/disk/mdraid_linux.c;
+  common = holy-core/disk/mdraid_linux_be.c;
+  common = holy-core/disk/mdraid1x_linux.c;
+  common = holy-core/disk/raid5_recover.c;
+  common = holy-core/disk/raid6_recover.c;
+  common = holy-core/font/font.c;
+  common = holy-core/gfxmenu/font.c;
+  common = holy-core/normal/charset.c;
+  common = holy-core/video/fb/fbblit.c;
+  common = holy-core/video/fb/fbutil.c;
+  common = holy-core/video/fb/fbfill.c;
+  common = holy-core/video/fb/video_fb.c;
+  common = holy-core/video/video.c;
+  common = holy-core/video/capture.c;
+  common = holy-core/video/colors.c;
+  common = holy-core/unidata.c;
+  common = holy-core/io/bufio.c;
+  common = holy-core/fs/affs.c;
+  common = holy-core/fs/afs.c;
+  common = holy-core/fs/bfs.c;
+  common = holy-core/fs/btrfs.c;
+  common = holy-core/fs/cbfs.c;
+  common = holy-core/fs/cpio.c;
+  common = holy-core/fs/cpio_be.c;
+  common = holy-core/fs/odc.c;
+  common = holy-core/fs/newc.c;
+  common = holy-core/fs/ext2.c;
+  common = holy-core/fs/fat.c;
+  common = holy-core/fs/exfat.c;
+  common = holy-core/fs/fshelp.c;
+  common = holy-core/fs/hfs.c;
+  common = holy-core/fs/hfsplus.c;
+  common = holy-core/fs/hfspluscomp.c;
+  common = holy-core/fs/iso9660.c;
+  common = holy-core/fs/jfs.c;
+  common = holy-core/fs/minix.c;
+  common = holy-core/fs/minix2.c;
+  common = holy-core/fs/minix3.c;
+  common = holy-core/fs/minix_be.c;
+  common = holy-core/fs/minix2_be.c;
+  common = holy-core/fs/minix3_be.c;
+  common = holy-core/fs/nilfs2.c;
+  common = holy-core/fs/ntfs.c;
+  common = holy-core/fs/ntfscomp.c;
+  common = holy-core/fs/reiserfs.c;
+  common = holy-core/fs/romfs.c;
+  common = holy-core/fs/sfs.c;
+  common = holy-core/fs/squash4.c;
+  common = holy-core/fs/tar.c;
+  common = holy-core/fs/udf.c;
+  common = holy-core/fs/ufs2.c;
+  common = holy-core/fs/ufs.c;
+  common = holy-core/fs/ufs_be.c;
+  common = holy-core/fs/xfs.c;
+  common = holy-core/fs/zfs/zfscrypt.c;
+  common = holy-core/fs/zfs/zfs.c;
+  common = holy-core/fs/zfs/zfsinfo.c;
+  common = holy-core/fs/zfs/zfs_lzjb.c;
+  common = holy-core/fs/zfs/zfs_lz4.c;
+  common = holy-core/fs/zfs/zfs_sha256.c;
+  common = holy-core/fs/zfs/zfs_fletcher.c;
+  common = holy-core/lib/envblk.c;
+  common = holy-core/lib/hexdump.c;
+  common = holy-core/lib/LzFind.c;
+  common = holy-core/lib/LzmaEnc.c;
+  common = holy-core/lib/crc.c;
+  common = holy-core/lib/adler32.c;
+  common = holy-core/lib/crc64.c;
+  common = holy-core/normal/datetime.c;
+  common = holy-core/normal/misc.c;
+  common = holy-core/partmap/acorn.c;
+  common = holy-core/partmap/amiga.c;
+  common = holy-core/partmap/apple.c;
+  common = holy-core/partmap/sun.c;
+  common = holy-core/partmap/plan.c;
+  common = holy-core/partmap/dvh.c;
+  common = holy-core/partmap/sunpc.c;
+  common = holy-core/partmap/bsdlabel.c;
+  common = holy-core/partmap/dfly.c;
+  common = holy-core/script/function.c;
+  common = holy-core/script/lexer.c;
+  common = holy-core/script/main.c;
+  common = holy-core/script/script.c;
+  common = holy-core/script/argv.c;
+  common = holy-core/io/gzio.c;
+  common = holy-core/io/xzio.c;
+  common = holy-core/io/lzopio.c;
+  common = holy-core/kern/ia64/dl_helper.c;
+  common = holy-core/kern/arm/dl_helper.c;
+  common = holy-core/kern/arm64/dl_helper.c;
+  common = holy-core/lib/minilzo/minilzo.c;
+  common = holy-core/lib/xzembed/xz_dec_bcj.c;
+  common = holy-core/lib/xzembed/xz_dec_lzma2.c;
+  common = holy-core/lib/xzembed/xz_dec_stream.c;
+};
+
+program = {
+  name = holy-mkimage;
+  mansection = 1;
+
+  common = util/holy-mkimage.c;
+  common = util/mkimage.c;
+  common = util/holy-mkimage32.c;
+  common = util/holy-mkimage64.c;
+  common = util/resolve.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/osdep/init.c;
+  common = holy-core/osdep/config.c;
+  extra_dist = holy-core/osdep/aros/config.c;
+  extra_dist = holy-core/osdep/windows/config.c;
+  extra_dist = holy-core/osdep/unix/config.c;
+  common = util/config.c;
+
+  extra_dist = util/holy-mkimagexx.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBLZMA)';
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+  cppflags = '-Dholy_PKGLIBDIR=\"$(pkglibdir)\"';
+};
+
+program = {
+  name = holy-mkrelpath;
+  mansection = 1;
+
+  common = util/holy-mkrelpath.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-script-check;
+  mansection = 1;
+
+  common = util/holy-script-check.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-editenv;
+  mansection = 1;
+
+  common = util/holy-editenv.c;
+  common = util/editenv.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-mkpasswd-pbkdf2;
+  mansection = 1;
+
+  common = util/holy-mkpasswd-pbkdf2.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/osdep/random.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-macho2img;
+  mansection = 1;
+  common = util/holy-macho2img.c;
+  condition = COND_APPLE_LINKER;
+};
+
+program = {
+  name = holy-fstest;
+  mansection = 1;
+  common_nodist = holy_fstest_init.c;
+  common = util/holy-fstest.c;
+  common = holy-core/kern/emu/hostfs.c;
+  common = holy-core/disk/host.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-mount;
+  mansection = 1;
+  common_nodist = holy_fstest_init.c;
+  common = util/holy-mount.c;
+  common = holy-core/kern/emu/hostfs.c;
+  common = holy-core/disk/host.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) -lfuse';
+  condition = COND_holy_MOUNT;
+};
+
+program = {
+  name = holy-mkfont;
+  mansection = 1;
+  common = util/holy-mkfont.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/osdep/init.c;
+
+  cflags = '$(freetype_cflags)';
+  cppflags = '-Dholy_MKFONT=1';
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(freetype_libs)';
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+  condition = COND_holy_MKFONT;
+};
+
+program = {
+  name = holy-probe;
+  installdir = sbin;
+  mansection = 8;
+  common = util/holy-probe.c;
+  common = util/probe.c;
+  common = holy-core/osdep/ofpath.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-bios-setup;
+  installdir = sbin;
+  mansection = 8;
+  common = util/holy-setup.c;
+  common = util/setup_bios.c;
+  extra_dist = util/setup.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/lib/reed_solomon.c;
+  common = holy-core/osdep/blocklist.c;
+  extra_dist = holy-core/osdep/generic/blocklist.c;
+  extra_dist = holy-core/osdep/linux/blocklist.c;
+  extra_dist = holy-core/osdep/windows/blocklist.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholykern.a;
+  ldadd = libholygcry.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+  cppflags = '-Dholy_SETUP_FUNC=holy_util_bios_setup';
+};
+
+program = {
+  name = holy-sparc64-setup;
+  installdir = sbin;
+  mansection = 8;
+  common = util/holy-setup.c;
+  common = util/setup_sparc.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/lib/reed_solomon.c;
+  common = holy-core/osdep/ofpath.c;
+  common = holy-core/osdep/blocklist.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholykern.a;
+  ldadd = libholygcry.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+  cppflags = '-Dholy_SETUP_FUNC=holy_util_sparc_setup';
+};
+
+program = {
+  name = holy-ofpathname;
+  installdir = sbin;
+  mansection = 8;
+  common = util/ieee1275/holy-ofpathname.c;
+  common = holy-core/osdep/ofpath.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-mklayout;
+  mansection = 1;
+
+  common = util/holy-mklayout.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-macbless;
+  installdir = sbin;
+  mansection = 8;
+  common = util/holy-macbless.c;
+  common = holy-core/osdep/init.c;
+  common = holy-core/kern/emu/argp_common.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+data = {
+  common = util/holy.d/README;
+  installdir = holyconf;
+};
+
+script = {
+  name = '00_header';
+  common = util/holy.d/00_header.in;
+  installdir = holyconf;
+};
+
+script = {
+  name = '10_windows';
+  common = util/holy.d/10_windows.in;
+  installdir = holyconf;
+  condition = COND_HOST_WINDOWS;
+};
+
+script = {
+  name = '10_hurd';
+  common = util/holy.d/10_hurd.in;
+  installdir = holyconf;
+  condition = COND_HOST_HURD;
+};
+
+script = {
+  name = '10_kfreebsd';
+  common = util/holy.d/10_kfreebsd.in;
+  installdir = holyconf;
+  condition = COND_HOST_KFREEBSD;
+};
+
+script = {
+  name = '10_illumos';
+  common = util/holy.d/10_illumos.in;
+  installdir = holyconf;
+  condition = COND_HOST_ILLUMOS;
+};
+
+script = {
+  name = '10_netbsd';
+  common = util/holy.d/10_netbsd.in;
+  installdir = holyconf;
+  condition = COND_HOST_NETBSD;
+};
+
+script = {
+  name = '10_linux';
+  common = util/holy.d/10_linux.in;
+  installdir = holyconf;
+  condition = COND_HOST_LINUX;
+};
+
+script = {
+  name = '10_xnu';
+  common = util/holy.d/10_xnu.in;
+  installdir = holyconf;
+  condition = COND_HOST_XNU;
+};
+
+script = {
+  name = '20_linux_xen';
+  common = util/holy.d/20_linux_xen.in;
+  installdir = holyconf;
+  condition = COND_HOST_LINUX;
+};
+
+script = {
+  name = '30_os-prober';
+  common = util/holy.d/30_os-prober.in;
+  installdir = holyconf;
+};
+
+script = {
+  name = '40_custom';
+  common = util/holy.d/40_custom.in;
+  installdir = holyconf;
+};
+
+script = {
+  name = '41_custom';
+  common = util/holy.d/41_custom.in;
+  installdir = holyconf;
+};
+
+program = {
+  mansection = 1;
+  name = holy-mkrescue;
+
+  common = util/holy-mkrescue.c;
+  common = util/render-label.c;
+  common = util/glue-efi.c;
+  common = util/mkimage.c;
+  common = util/holy-mkimage32.c;
+  common = util/holy-mkimage64.c;
+  common = util/holy-install-common.c;
+  common = util/setup_bios.c;
+  common = util/setup_sparc.c;
+  common = holy-core/lib/reed_solomon.c;
+  common = holy-core/osdep/random.c;
+  common = holy-core/osdep/ofpath.c;
+  common = holy-core/osdep/platform.c;
+  common = holy-core/osdep/platform_unix.c;
+  common = holy-core/osdep/compress.c;
+  extra_dist = holy-core/osdep/unix/compress.c;
+  extra_dist = holy-core/osdep/basic/compress.c;
+  common = util/editenv.c;
+  common = holy-core/osdep/blocklist.c;
+  common = holy-core/osdep/config.c;
+  common = util/config.c;
+
+  common = holy-core/kern/emu/hostfs.c;
+  common = holy-core/disk/host.c;
+
+  common = util/resolve.c;
+
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = '$(LIBLZMA)';
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+
+  condition = COND_HAVE_EXEC;
+};
+
+program = {
+  mansection = 1;
+  name = holy-mkstandalone;
+  common = util/holy-mkstandalone.c;
+
+  common = util/render-label.c;
+  common = util/glue-efi.c;
+  common = util/mkimage.c;
+  common = util/holy-mkimage32.c;
+  common = util/holy-mkimage64.c;
+  common = util/holy-install-common.c;
+  common = util/setup_bios.c;
+  common = util/setup_sparc.c;
+  common = holy-core/lib/reed_solomon.c;
+  common = holy-core/osdep/random.c;
+  common = holy-core/osdep/ofpath.c;
+  common = holy-core/osdep/platform.c;
+  common = holy-core/osdep/platform_unix.c;
+  extra_dist = holy-core/osdep/linux/platform.c;
+  extra_dist = holy-core/osdep/windows/platform.c;
+  extra_dist = holy-core/osdep/basic/platform.c;
+  extra_dist = holy-core/osdep/basic/no_platform.c;
+  extra_dist = holy-core/osdep/unix/platform.c;
+  common = holy-core/osdep/compress.c;
+  common = util/editenv.c;
+  common = holy-core/osdep/blocklist.c;
+  common = holy-core/osdep/config.c;
+  common = util/config.c;
+
+  common = holy-core/kern/emu/hostfs.c;
+  common = holy-core/disk/host.c;
+
+  common = util/resolve.c;
+
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = '$(LIBLZMA)';
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  mansection = 8;
+  installdir = sbin;
+  name = holy-install;
+
+  common = util/holy-install.c;
+  common = util/probe.c;
+  common = util/mkimage.c;
+  common = util/holy-mkimage32.c;
+  common = util/holy-mkimage64.c;
+  common = util/holy-install-common.c;
+  common = util/setup_bios.c;
+  common = util/setup_sparc.c;
+  common = holy-core/lib/reed_solomon.c;
+  common = holy-core/osdep/random.c;
+  common = holy-core/osdep/ofpath.c;
+  common = holy-core/osdep/platform.c;
+  common = holy-core/osdep/platform_unix.c;
+  common = holy-core/osdep/compress.c;
+  common = util/editenv.c;
+  common = holy-core/osdep/blocklist.c;
+  common = holy-core/osdep/config.c;
+  common = util/config.c;
+  common = util/render-label.c;
+  common = holy-core/kern/emu/hostfs.c;
+  common = holy-core/disk/host.c;
+
+  common = util/resolve.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = '$(LIBLZMA)';
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  mansection = 1;
+  installdir = bin;
+  name = holy-mknetdir;
+
+  common = util/holy-mknetdir.c;
+
+  common = util/mkimage.c;
+  common = util/holy-mkimage32.c;
+  common = util/holy-mkimage64.c;
+  common = util/holy-install-common.c;
+  common = util/setup_bios.c;
+  common = util/setup_sparc.c;
+  common = holy-core/lib/reed_solomon.c;
+  common = holy-core/osdep/random.c;
+  common = holy-core/osdep/ofpath.c;
+  common = holy-core/osdep/platform.c;
+  common = holy-core/osdep/platform_unix.c;
+  common = holy-core/osdep/compress.c;
+  common = util/editenv.c;
+  common = holy-core/osdep/blocklist.c;
+  common = holy-core/osdep/config.c;
+  common = util/config.c;
+
+  common = util/resolve.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = '$(LIBLZMA)';
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBUTIL) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+script = {
+  name = holy-mkconfig;
+  common = util/holy-mkconfig.in;
+  mansection = 8;
+  installdir = sbin;
+};
+
+script = {
+  name = holy-set-default;
+  common = util/holy-set-default.in;
+  mansection = 8;
+  installdir = sbin;
+};
+
+script = {
+  name = holy-reboot;
+  common = util/holy-reboot.in;
+  mansection = 8;
+  installdir = sbin;
+};
+
+script = {
+  name = holy-mkconfig_lib;
+  common = util/holy-mkconfig_lib.in;
+  installdir = noinst;
+};
+
+script = {
+  name = holy-kbdcomp;
+  common = util/holy-kbdcomp.in;
+  mansection = 1;
+};
+
+script = {
+  name = holy-shell;
+  common = tests/util/holy-shell.in;
+  installdir = noinst;
+};
+
+script = {
+  name = holy-shell-tester;
+  common = tests/util/holy-shell-tester.in;
+  installdir = noinst;
+};
+
+script = {
+  name = holy-fs-tester;
+  common = tests/util/holy-fs-tester.in;
+  installdir = noinst;
+  dependencies = 'garbage-gen$(BUILD_EXEEXT)';
+};
+
+script = {
+  testcase;
+  name = ext234_test;
+  common = tests/ext234_test.in;
+};
+
+script = {
+  testcase;
+  name = squashfs_test;
+  common = tests/squashfs_test.in;
+};
+
+script = {
+  testcase;
+  name = iso9660_test;
+  common = tests/iso9660_test.in;
+};
+
+script = {
+  testcase;
+  name = hfsplus_test;
+  common = tests/hfsplus_test.in;
+};
+
+script = {
+  testcase;
+  name = ntfs_test;
+  common = tests/ntfs_test.in;
+};
+
+script = {
+  testcase;
+  name = reiserfs_test;
+  common = tests/reiserfs_test.in;
+};
+
+script = {
+  testcase;
+  name = fat_test;
+  common = tests/fat_test.in;
+};
+
+script = {
+  testcase;
+  name = minixfs_test;
+  common = tests/minixfs_test.in;
+};
+
+script = {
+  testcase;
+  name = xfs_test;
+  common = tests/xfs_test.in;
+};
+
+script = {
+  testcase;
+  name = nilfs2_test;
+  common = tests/nilfs2_test.in;
+};
+
+script = {
+  testcase;
+  name = romfs_test;
+  common = tests/romfs_test.in;
+};
+
+script = {
+  testcase;
+  name = exfat_test;
+  common = tests/exfat_test.in;
+};
+
+script = {
+  testcase;
+  name = tar_test;
+  common = tests/tar_test.in;
+};
+
+script = {
+  testcase;
+  name = udf_test;
+  common = tests/udf_test.in;
+};
+
+script = {
+  testcase;
+  name = hfs_test;
+  common = tests/hfs_test.in;
+};
+
+script = {
+  testcase;
+  name = jfs_test;
+  common = tests/jfs_test.in;
+};
+
+script = {
+  testcase;
+  name = btrfs_test;
+  common = tests/btrfs_test.in;
+};
+
+script = {
+  testcase;
+  name = zfs_test;
+  common = tests/zfs_test.in;
+};
+
+script = {
+  testcase;
+  name = cpio_test;
+  common = tests/cpio_test.in;
+};
+
+script = {
+  testcase;
+  name = example_scripted_test;
+  common = tests/example_scripted_test.in;
+};
+
+script = {
+  testcase;
+  name = gettext_strings_test;
+  common = tests/gettext_strings_test.in;
+  extra_dist = po/exclude.pot;
+};
+
+script = {
+  testcase;
+  name = pata_test;
+  common = tests/pata_test.in;
+};
+
+script = {
+  testcase;
+  name = ahci_test;
+  common = tests/ahci_test.in;
+};
+
+script = {
+  testcase;
+  name = uhci_test;
+  common = tests/uhci_test.in;
+};
+
+script = {
+  testcase;
+  name = ohci_test;
+  common = tests/ohci_test.in;
+};
+
+script = {
+  testcase;
+  name = ehci_test;
+  common = tests/ehci_test.in;
+};
+
+script = {
+  testcase;
+  name = example_holy_script_test;
+  common = tests/example_holy_script_test.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_eval;
+  common = tests/holy_script_eval.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_test;
+  common = tests/holy_script_test.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_echo1;
+  common = tests/holy_script_echo1.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_leading_whitespace;
+  common = tests/holy_script_leading_whitespace.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_echo_keywords;
+  common = tests/holy_script_echo_keywords.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_vars1;
+  common = tests/holy_script_vars1.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_for1;
+  common = tests/holy_script_for1.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_while1;
+  common = tests/holy_script_while1.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_if;
+  common = tests/holy_script_if.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_blanklines;
+  common = tests/holy_script_blanklines.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_final_semicolon;
+  common = tests/holy_script_final_semicolon.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_dollar;
+  common = tests/holy_script_dollar.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_comments;
+  common = tests/holy_script_comments.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_functions;
+  common = tests/holy_script_functions.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_break;
+  common = tests/holy_script_break.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_continue;
+  common = tests/holy_script_continue.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_shift;
+  common = tests/holy_script_shift.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_blockarg;
+  common = tests/holy_script_blockarg.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_setparams;
+  common = tests/holy_script_setparams.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_return;
+  common = tests/holy_script_return.in;
+};
+
+script = {
+  testcase;
+  name = holy_cmd_regexp;
+  common = tests/holy_cmd_regexp.in;
+};
+
+script = {
+  testcase;
+  name = holy_cmd_date;
+  common = tests/holy_cmd_date.in;
+};
+
+script = {
+  testcase;
+  name = holy_cmd_set_date;
+  common = tests/holy_cmd_set_date.in;
+};
+
+script = {
+  testcase;
+  name = holy_cmd_sleep;
+  common = tests/holy_cmd_sleep.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_expansion;
+  common = tests/holy_script_expansion.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_not;
+  common = tests/holy_script_not.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_no_commands;
+  common = tests/holy_script_no_commands.in;
+};
+
+script = {
+  testcase;
+  name = partmap_test;
+  common = tests/partmap_test.in;
+};
+
+script = {
+  testcase;
+  name = hddboot_test;
+  common = tests/hddboot_test.in;
+};
+
+script = {
+  testcase;
+  name = fddboot_test;
+  common = tests/fddboot_test.in;
+};
+
+script = {
+  testcase;
+  name = cdboot_test;
+  common = tests/cdboot_test.in;
+};
+
+script = {
+  testcase;
+  name = netboot_test;
+  common = tests/netboot_test.in;
+};
+
+script = {
+  testcase;
+  name = pseries_test;
+  common = tests/pseries_test.in;
+};
+
+script = {
+  testcase;
+  name = core_compress_test;
+  common = tests/core_compress_test.in;
+};
+
+script = {
+  testcase;
+  name = xzcompress_test;
+  common = tests/xzcompress_test.in;
+};
+
+script = {
+  testcase;
+  name = gzcompress_test;
+  common = tests/gzcompress_test.in;
+};
+
+script = {
+  testcase;
+  name = lzocompress_test;
+  common = tests/lzocompress_test.in;
+};
+
+script = {
+  testcase;
+  name = holy_cmd_echo;
+  common = tests/holy_cmd_echo.in;
+};
+
+script = {
+  testcase;
+  name = help_test;
+  common = tests/help_test.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_gettext;
+  common = tests/holy_script_gettext.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_escape_comma;
+  common = tests/holy_script_escape_comma.in;
+};
+
+script = {
+  testcase;
+  name = holy_script_strcmp;
+  common = tests/holy_script_strcmp.in;
+};
+
+script = {
+  testcase;
+  name = test_sha512sum;
+  common = tests/test_sha512sum.in;
+};
+
+script = {
+  testcase;
+  name = test_unset;
+  common = tests/test_unset.in;
+};
+
+script = {
+  testcase;
+  name = holy_func_test;
+  common = tests/holy_func_test.in;
+};
+
+script = {
+  testcase;
+  name = holy_cmd_tr;
+  common = tests/holy_cmd_tr.in;
+};
+
+script = {
+  testcase;
+  name = gptrepair_test;
+  common = tests/gptrepair_test.in;
+};
+
+script = {
+  testcase;
+  name = gptprio_test;
+  common = tests/gptprio_test.in;
+};
+
+script = {
+  testcase;
+  name = file_filter_test;
+  common = tests/file_filter_test.in;
+};
+
+script = {
+  testcase;
+  name = holy_cmd_test;
+  common = tests/holy_cmd_test.in;
+};
+
+script = {
+  testcase;
+  name = syslinux_test;
+  common = tests/syslinux_test.in;
+};
+
+program = {
+  testcase;
+  name = example_unit_test;
+  common = tests/example_unit_test.c;
+  common = tests/lib/unit_test.c;
+  common = holy-core/kern/list.c;
+  common = holy-core/kern/misc.c;
+  common = holy-core/tests/lib/test.c;
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  testcase;
+  name = printf_test;
+  common = tests/printf_unit_test.c;
+  common = tests/lib/unit_test.c;
+  common = holy-core/kern/list.c;
+  common = holy-core/kern/misc.c;
+  common = holy-core/tests/lib/test.c;
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  testcase;
+  name = date_test;
+  common = tests/date_unit_test.c;
+  common = tests/lib/unit_test.c;
+  common = holy-core/kern/list.c;
+  common = holy-core/kern/misc.c;
+  common = holy-core/tests/lib/test.c;
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  testcase;
+  name = priority_queue_unit_test;
+  common = tests/priority_queue_unit_test.cc;
+  common = tests/lib/unit_test.c;
+  common = holy-core/kern/list.c;
+  common = holy-core/kern/misc.c;
+  common = holy-core/tests/lib/test.c;
+  common = holy-core/lib/priority_queue.c;
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+  condition = COND_HAVE_CXX;
+};
+
+program = {
+  testcase;
+  name = cmp_test;
+  common = tests/cmp_unit_test.c;
+  common = tests/lib/unit_test.c;
+  common = holy-core/kern/list.c;
+  common = holy-core/kern/misc.c;
+  common = holy-core/tests/lib/test.c;
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  testcase;
+  name = gpt_unit_test;
+  common = tests/gpt_unit_test.c;
+  common = tests/lib/unit_test.c;
+  common = holy-core/commands/search_part_label.c;
+  common = holy-core/commands/search_part_uuid.c;
+  common = holy-core/commands/search_disk_uuid.c;
+  common = holy-core/disk/host.c;
+  common = holy-core/kern/emu/hostfs.c;
+  common = holy-core/lib/gpt.c;
+  common = holy-core/tests/lib/test.c;
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-menulst2cfg;
+  mansection = 1;
+  common = util/holy-menulst2cfg.c;
+  common = holy-core/lib/legacy_parse.c;
+  common = holy-core/lib/i386/pc/vesa_modes_table.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-syslinux2cfg;
+  mansection = 1;
+  common = util/holy-syslinux2cfg.c;
+  common = holy-core/lib/syslinux_parse.c;
+  common = holy-core/lib/getline.c;
+  common = holy-core/osdep/init.c;
+  common = holy-core/kern/emu/hostfs.c;
+  common = holy-core/disk/host.c;
+  common = holy-core/kern/emu/argp_common.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-glue-efi;
+  mansection = 1;
+
+  common = util/holy-glue-efi.c;
+  common = util/glue-efi.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-render-label;
+  mansection = 1;
+
+  common = util/holy-render-label.c;
+  common = util/render-label.c;
+  common = holy-core/kern/emu/argp_common.c;
+  common = holy-core/kern/emu/hostfs.c;
+  common = holy-core/disk/host.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};
+
+program = {
+  name = holy-file;
+  mansection = 1;
+
+  common = util/holy-file.c;
+  common = util/render-label.c;
+  common = holy-core/commands/file.c;
+  common = holy-core/commands/file32.c;
+  common = holy-core/commands/file64.c;
+  common = holy-core/loader/i386/xen_file.c;
+  common = holy-core/loader/i386/xen_file32.c;
+  common = holy-core/loader/i386/xen_file64.c;
+  common = holy-core/io/offset.c;
+  common = holy-core/kern/elf.c;
+  common = holy-core/loader/lzss.c;
+  common = holy-core/loader/macho.c;
+  common = holy-core/loader/macho32.c;
+  common = holy-core/loader/macho64.c;
+  common = holy-core/kern/emu/hostfs.c;
+  common = holy-core/disk/host.c;
+  common = holy-core/osdep/init.c;
+
+  ldadd = libholymods.a;
+  ldadd = libholygcry.a;
+  ldadd = libholykern.a;
+  ldadd = holy-core/gnulib/libgnu.a;
+  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM)';
+};

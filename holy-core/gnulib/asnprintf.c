@@ -1,0 +1,23 @@
+/*
+ * Copyright 2025 Felix P. A. Gillberg HolyBooter
+ * SPDX-License-Identifier: GPL-2.0
+ */
+
+#include <config.h>
+
+/* Specification.  */
+#include "vasnprintf.h"
+
+#include <stdarg.h>
+
+char *
+asnprintf (char *resultbuf, size_t *lengthp, const char *format, ...)
+{
+  va_list args;
+  char *result;
+
+  va_start (args, format);
+  result = vasnprintf (resultbuf, lengthp, format, args);
+  va_end (args);
+  return result;
+}

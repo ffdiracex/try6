@@ -1,0 +1,19 @@
+#! @builddir@/holy-shell-tester
+
+
+var=foo
+echo $var
+echo "$var"
+echo ${var}
+echo "${var}"
+
+echo $1 $2 $?
+
+foo=foo
+echo "" $foo
+
+echo $bar $foo
+
+bar=""
+echo $bar $foo
+

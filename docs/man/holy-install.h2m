@@ -1,0 +1,6 @@
+[NAME]
+holy-install \- install holy to a device
+[SEE ALSO]
+.BR holy-mkconfig (8),
+.BR holy-mkimage (1),
+.BR holy-mkrescue (1)

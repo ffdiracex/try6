@@ -1,0 +1,44 @@
+#! @builddir@/holy-shell-tester
+
+
+if test x$holyshell = xyes; then cmd=setparams; else cmd=set; fi
+
+function f1 {
+    echo $#
+    echo "$#"
+
+    echo $@
+    echo "$@"
+
+    echo $*
+    echo "$*"
+
+    echo $1 $2
+    for v in "$@"; do echo $v; done
+    shift
+    echo $1 $2
+    for v in "$@"; do echo $v; done
+
+    $cmd 1 2 3 4
+
+    echo $#
+    echo "$#"
+
+    echo $@
+    echo "$@"
+
+    echo $*
+    echo "$*"
+
+    echo $1 $2
+    for v in "$@"; do echo $v; done
+    shift
+    echo $1 $2
+    for v in "$@"; do echo $v; done
+}
+# f1
+# f1 a
+f1 a b
+f1 a b c
+f1 a b c d
+f1 a b c d e

@@ -1,0 +1,10 @@
+#! @builddir@/holy-shell-tester
+
+foo=one
+echo $foo
+
+unset foo
+echo $foo
+echo ${foo}
+
+

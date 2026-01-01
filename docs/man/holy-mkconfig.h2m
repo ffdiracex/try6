@@ -1,0 +1,4 @@
+[NAME]
+holy-mkconfig \- generate a holy configuration file
+[SEE ALSO]
+.BR holy-install (8)

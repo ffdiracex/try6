@@ -1,0 +1,67 @@
+#! /bin/bash
+
+# create a randome file
+empty="`mktemp "${TMPDIR:-/tmp}/tmp.XXXXXXXXXX"`" || exit 1
+non_empty="`mktemp "${TMPDIR:-/tmp}/tmp.XXXXXXXXXX"`" || exit 1
+cat >$non_empty <<EOF
+hello world!
+EOF
+
+. "@builddir@/holy-core/modinfo.sh"
+
+if [ x"${holy_modinfo_platform}" = xemu ]; then
+    holy_empty="(host)$empty"
+    holy_non_empty="(host)$non_empty"
+    holy_dir="(host)${TMPDIR:-/tmp}"
+else
+    holy_empty="/boot/empty"
+    holy_non_empty="/boot/non_empty"
+    holy_dir="/boot/holy"
+fi
+
+
+outfile="`mktemp "${TMPDIR:-/tmp}/tmp.XXXXXXXXXX"`" || exit 1
+@builddir@/holy-shell --files=$holy_empty=$empty  --files=$holy_non_empty=$non_empty>$outfile <<EOF
+if ! test -f $holy_empty; then
+  echo FAIL1
+fi
+if ! test -e $holy_empty; then
+  echo FAIL2
+fi
+if test -d $holy_empty; then
+  echo FAIL3
+fi
+if ! test -d $holy_dir; then
+  echo FAIL4
+fi
+if test -s $holy_empty; then
+  echo FAIL5
+fi
+if ! test -s $holy_non_empty; then
+  echo FAIL6
+fi
+if test -f $holy_empty -a foo = bar; then
+  echo FAIL7
+fi
+if test -e $holy_empty -a foo = bar; then
+  echo FAIL8
+fi
+if test -s $holy_non_empty -a foo = bar; then
+  echo FAIL9
+fi
+if test -d $holy_dir -a foo = bar; then
+  echo FAIL10
+fi
+
+EOF
+
+rm -f "$empty" "$non_empty"
+
+if grep FAIL "$outfile" > /dev/null 2>&1; then
+    echo "holy test command file tests failed."
+    cat "$outfile"
+    exit 1
+else
+    rm -f "${outfile}"
+    exit 0
+fi

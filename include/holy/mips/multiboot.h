@@ -1,0 +1,18 @@
+/*
+ * Copyright 2025 Felix P. A. Gillberg HolyBooter
+ * SPDX-License-Identifier: GPL-2.0
+ */
+
+#ifndef holy_MULTIBOOT_CPU_HEADER
+#define holy_MULTIBOOT_CPU_HEADER	1
+
+#define MULTIBOOT_INITIAL_STATE  { .gpr[4] = MULTIBOOT_BOOTLOADER_MAGIC, \
+    .jumpreg = 1 }
+#define MULTIBOOT_ENTRY_REGISTER gpr[1]
+#define MULTIBOOT_MBI_REGISTER gpr[5]
+#define MULTIBOOT_ARCHITECTURE_CURRENT MULTIBOOT_ARCHITECTURE_MIPS32
+
+#define MULTIBOOT_ELF32_MACHINE EM_MIPS
+#define MULTIBOOT_ELF64_MACHINE EM_MIPS
+
+#endif /* ! holy_MULTIBOOT_CPU_HEADER */

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+if ! which xorriso >/dev/null 2>&1; then
+   echo "xorriso not installed; cannot test iso9660."
+   exit 77
+fi
+
+"@builddir@/holy-fs-tester" joliet
+"@builddir@/holy-fs-tester" rockridge
+"@builddir@/holy-fs-tester" rockridge_joliet
+"@builddir@/holy-fs-tester" joliet_1999
+"@builddir@/holy-fs-tester" rockridge_1999
+"@builddir@/holy-fs-tester" rockridge_joliet_1999

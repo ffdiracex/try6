@@ -1,0 +1,71 @@
+#! @builddir@/holy-shell-tester
+
+# continue without any arguments
+for i in 1 2 3 4 5 6 7 8 9 10
+do
+  if test "$i" = 5
+  then
+    continue
+  fi
+  echo $i
+done
+
+# continue with one
+for i in 1 2 3 4 5 6 7 8 9 10
+do
+  if test "$i" = 5
+  then
+    continue 1
+  fi
+  echo $i
+done
+
+# continue with loop count
+for i in 1 2 3 4 5
+do
+  for j in a b c d e f
+  do
+    if test "$i" = 3
+    then
+      if test "$j" = d
+      then
+        continue 2
+      fi
+      echo "$i $j"
+    fi
+  done
+done
+
+# continue into middle loop
+for i in 1 2 3 4 5
+do
+  for j in a b c d e f
+  do
+    if test "$i" = 3
+    then
+      if test "$j" = d
+      then
+        continue 1
+      fi
+      echo "$i $j"
+    fi
+  done
+done
+
+# while and until loops
+a=
+while test "$a" != "aaaaaaa"
+do
+  a="a$a"
+  for i in 1 2 3 4
+  do
+    b=
+    until test "$b" = "bbbbb"
+    do
+      b="b$b"
+      if test "$i" = 3; then echo "continue 2"; continue 2; fi
+      echo "$a $i $b"
+    done
+  done
+done
+

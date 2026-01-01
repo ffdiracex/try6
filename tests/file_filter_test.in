@@ -1,0 +1,62 @@
+#! /bin/sh
+
+set -e
+holyshell=@builddir@/holy-shell
+
+. "@builddir@/holy-core/modinfo.sh"
+
+filters="gzio xzio lzopio verify"
+modules="cat mpi"
+
+for mod in $(cut -d ' ' -f 2 "@builddir@/holy-core/crypto.lst"  | sort -u); do
+    modules="$modules $mod"
+done
+
+for file in file.gz file.xz file.lzop file.gz.sig file.xz.sig file.lzop.sig keys.pub; do
+    files="$files /$file=@srcdir@/tests/file_filter/$file"
+done
+
+# holy cat command adds extra newline after file
+result="Hello, user!
+
+Hello, user!
+
+Hello, user!"
+
+out="$("${holyshell}" --modules="$modules $filters" --files="$files" "@srcdir@/tests/file_filter/test.cfg")"
+if [ "$out" != "$result" ]; then
+   echo LOCAL FAIL
+   echo "$out"
+   exit 1
+fi
+
+# Taken from netboot_test
+case "${holy_modinfo_target_cpu}-${holy_modinfo_platform}" in
+    # PLATFORM: emu is different
+    *-emu)
+	exit 0;;
+    # PLATFORM: Flash targets
+    i386-qemu | i386-coreboot | mips-qemu_mips | mipsel-qemu_mips)
+	exit 0;;
+    # FIXME: currently holy-shell uses only -kernel for loongson
+    mipsel-loongson)
+	exit 0;;
+    # FIXME: no rtl8139 support
+    i386-multiboot)
+	exit 0;;
+    # FIXME: We don't fully support netboot on ARC
+    *-arc)
+	exit 0;;
+    # FIXME: Many QEMU firmware have no netboot capability
+    *-efi | i386-ieee1275 | powerpc-ieee1275 | sparc64-ieee1275)
+	exit 0;;
+esac
+
+out="$("${holyshell}" --boot=net --modules="$modules $filters" --files="$files" "@srcdir@/tests/file_filter/test.cfg")"
+if [ "$out" != "$result" ]; then
+   echo NET FAIL
+   echo "$out"
+   exit 1
+fi
+
+exit 0

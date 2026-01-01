@@ -1,0 +1,6 @@
+#! /bin/sh
+set -e
+
+@builddir@/holy-script-check << EOF
+echo "\\\$"
+EOF

@@ -1,0 +1,5 @@
+gdb/i386/module-machdep.o: gdb/i386/machdep.S ../include/holy/cpu/gdb.h \
+ ../include/holy/symbol.h ../config.h
+../include/holy/cpu/gdb.h:
+../include/holy/symbol.h:
+../config.h:

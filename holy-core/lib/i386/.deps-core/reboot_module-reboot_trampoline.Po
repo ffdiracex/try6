@@ -1,0 +1,5 @@
+lib/i386/reboot_module-reboot_trampoline.o: lib/i386/reboot_trampoline.S \
+ ../include/holy/symbol.h ../config.h ../include/holy/i386/reboot.h
+../include/holy/symbol.h:
+../config.h:
+../include/holy/i386/reboot.h:

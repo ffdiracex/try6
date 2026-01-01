@@ -1,0 +1,10 @@
+/*
+ * Copyright 2025 Felix P. A. Gillberg HolyBooter
+ * SPDX-License-Identifier: GPL-2.0
+ */
+
+#if defined (__MINGW32__)
+#include "windows/init.c"
+#else
+#include "basic/init.c"
+#endif

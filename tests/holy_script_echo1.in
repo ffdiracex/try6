@@ -1,0 +1,168 @@
+#! @builddir@/holy-shell-tester
+
+
+# simple arguments
+echo one two three
+echo "one two three"
+echo 'one two three'
+ echo "one two three"
+   echo "one two three"
+	echo "one two three"
+
+# empty arguments
+echo a "" b
+echo a '' b
+
+echo a $foo b
+echo a ${foo} b
+
+echo a "$foo" b
+echo a "${foo}" b
+
+# multi-part arguments
+echo one"two"three
+echo one${two}three
+echo one"two"$three
+
+echo one'two'three
+echo one${two}three
+echo one'two'$three
+
+echo one'two'three"four"five${six}seven$eight
+
+
+foo=bar
+echo $foo ${foo}
+echo "$foo" "${foo}"
+echo '$foo' '${foo}'
+echo a$foob a${foo}b
+echo ab"cd"ef$foo'gh'ij${foo}kl\ mn\"op\'qr\$st\(uv\<wx\>yz\)
+
+foo=c
+bar=h
+echo e"$foo"${bar}o
+e"$foo"${bar}o hello world
+
+foo=echo
+$foo 1234
+
+echo "one
+"
+echo "one
+\""
+echo "one
+two"
+
+echo one"two
+"three
+echo one"two
+\""three
+echo one"two
+\"three\"
+four"
+
+
+echo 'one
+'
+echo 'one
+\'
+echo 'one
+two'
+echo one'two
+'
+echo one'two
+\'
+echo one'two
+\'three
+
+echo "one\
+"
+echo "one\
+\""
+echo "one\
+two"
+
+# echo "one\
+# two"
+# echo 'one\
+# two'
+# echo foo\
+# bar
+# \
+# echo foo
+# echo "one
+#
+# two"
+
+echo "one
+ "
+echo "one
+ \""
+echo "one
+ two"
+
+echo one"two
+ "three
+echo one"two
+ \""three
+echo one"two
+\"three\"
+ four"
+	
+echo 'one
+ '
+echo 'one
+ \'
+echo 'one
+ two'
+echo one'two
+ '
+echo one'two
+ \'
+echo one'two
+ \'three
+
+echo "one\
+ "
+echo "one\
+ \""
+echo "one\
+ two"
+
+echo one \
+ two
+
+echo one x\
+ two
+
+echo one x\
+"x" two
+echo one x\
+'x' two
+echo one x\
+\\ two
+
+echo one x\
+\
+x
+
+echo one x\
+
+
+
+echo one x\
+;
+
+echo one x\
+$var
+
+
+if test x$holyshell = xyes; then insmod regexp; fi
+echo /boot/holy/i386-pc/normal.mod
+echo x\\y
+echo x\*y
+echo x\\
+echo x\\\\
+echo x\\\\y
+
+

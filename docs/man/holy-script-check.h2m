@@ -1,0 +1,4 @@
+[NAME]
+holy-script-check \- check holy.cfg for syntax errors
+[SEE ALSO]
+.BR holy-mkconfig (8)

@@ -1,0 +1,71 @@
+#! @builddir@/holy-shell-tester
+
+# break without any arguments
+for i in 1 2 3 4 5 6 7 8 9 10
+do
+  echo $i
+  if test "$i" = 5
+  then
+    break
+  fi
+done
+
+# break with one
+for i in 1 2 3 4 5 6 7 8 9 10
+do
+  echo $i
+  if test "$i" = 5
+  then
+    break 1
+  fi
+done
+
+# break with loop count
+for i in 1 2 3 4 5
+do
+  for j in a b c d e f
+  do
+    echo "$i $j"
+    if test "$i" = 3
+    then
+      if test "$j" = d
+      then
+        break 2
+      fi
+    fi
+  done
+done
+
+# break into middle loop
+for i in 1 2 3 4 5
+do
+  for j in a b c d e f
+  do
+    echo "$i $j"
+    if test "$i" = 3
+    then
+      if test "$j" = d
+      then
+        break 1
+      fi
+    fi
+  done
+done
+
+# while and until loops
+a=
+while test "$a" != "aaaaaaa"
+do
+  a="a$a"
+  for i in 1 2 3 4
+  do
+    b=
+    until test "$b" = "bbbbb"
+    do
+      b="b$b"
+      echo "$a $i $b"
+      if test "$i" = 3; then echo "break 2"; break 2; fi
+    done
+  done
+done
+

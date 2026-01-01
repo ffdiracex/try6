@@ -1,0 +1,7 @@
+boot/i386/pc/diskboot_image-diskboot.o: boot/i386/pc/diskboot.S \
+ ../include/holy/symbol.h ../config.h ../include/holy/machine/boot.h \
+ ../include/holy/offsets.h
+../include/holy/symbol.h:
+../config.h:
+../include/holy/machine/boot.h:
+../include/holy/offsets.h:

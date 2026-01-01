@@ -1,0 +1,4 @@
+[NAME]
+holy-syslinux2cfg \- transform syslinux config into holy.cfg
+[SEE ALSO]
+.BR holy-menulst2cfg (8)
