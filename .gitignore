@@ -1,40 +1,15 @@
-# Prerequisites
-*.d
-
-# Object files
+# =========================
+# C build artifacts
+# =========================
 *.o
-*.ko
-*.obj
+*.a
+*.so
+*.out
+*.exe
 *.elf
 
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
+# Precompiled headers
 *.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
 
 # Debug files
 *.dSYM/
@@ -42,14 +17,81 @@
 *.idb
 *.pdb
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Coverage / profiling
+*.gcda
+*.gcno
+*.gcov
+gmon.out
 
-# debug information files
-*.dwo
+# =========================
+# Make / build directories
+# =========================
+build/
+bin/
+obj/
+dist/
+tmp/
+
+# Common Makefile byproducts
+*.depend
+.deps/
+
+# =========================
+# Bash / shell artifacts
+# =========================
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+.#*
+
+# Shell history / runtime files
+.bash_history
+.bashrc.local
+.bash_profile.local
+
+# =========================
+# Editor / IDE files
+# =========================
+.vscode/
+.idea/
+*.code-workspace
+
+# Vim
+*.vim
+*.vimrc.local
+
+# Emacs
+*#
+.#*
+
+# =========================
+# OS-generated files
+# =========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# =========================
+# Puppet (intentionally ignored)
+# =========================
+*.pp
+manifests/
+modules/
+hiera.yaml
+hiera.yml
+Puppetfile
+.Puppetfile.lock
+.puppet/
+.puppetlabs/
+
+# =========================
+# Misc
+# =========================
+.env
+.env.*
+.cache/
