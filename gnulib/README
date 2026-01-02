@@ -1,9 +1,6 @@
-Please create and read the docs with
+==================================
+NOTE
+===============
 
-  $ cd doc
-  $ make gnulib.html
-  $ xdg-open gnulib.html
-
-or read the online manual at
-
-  https://www.gnu.org/software/gnulib/manual/gnulib.html
+THIS IS NOT THE AUTHORS LIBRARY, IT IS PURELY EXTERNAL AND NOT MINE.
+Credit to GNU for their amazing libraries for handling zip, files, tars and so forth - I need these for the bootloader.
