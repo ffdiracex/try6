@@ -1,4 +1,0 @@
-mmap/i386/pc/module-mmap_helper.o: mmap/i386/pc/mmap_helper.S \
- ../include/holy/symbol.h ../config.h
-../include/holy/symbol.h:
-../config.h:
