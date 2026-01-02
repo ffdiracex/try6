@@ -3,59 +3,6 @@
 % Load plain if necessary, i.e., if running under initex.
 \expandafter\ifx\csname fmtname\endcsname\relax\input plain\fi
 %
-\def\texinfoversion{2021-04-25.21}
-%
-% Copyright 1985, 1986, 1988, 1990-2021 Free Software Foundation, Inc.
-%
-% This texinfo.tex file is free software: you can redistribute it and/or
-% modify it under the terms of the GNU General Public License as
-% published by the Free Software Foundation, either version 3 of the
-% License, or (at your option) any later version.
-%
-% This texinfo.tex file is distributed in the hope that it will be
-% useful, but WITHOUT ANY WARRANTY; without even the implied warranty
-% of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-% General Public License for more details.
-%
-% You should have received a copy of the GNU General Public License
-% along with this program.  If not, see <https://www.gnu.org/licenses/>.
-%
-% As a special exception, when this file is read by TeX when processing
-% a Texinfo source document, you may use the result without
-% restriction. This Exception is an additional permission under section 7
-% of the GNU General Public License, version 3 ("GPLv3").
-%
-% Please try the latest version of texinfo.tex before submitting bug
-% reports; you can get the latest version from:
-%   https://ftp.gnu.org/gnu/texinfo/ (the Texinfo release area), or
-%   https://ftpmirror.gnu.org/texinfo/ (same, via a mirror), or
-%   https://www.gnu.org/software/texinfo/ (the Texinfo home page)
-% The texinfo.tex in any given distribution could well be out
-% of date, so if that's what you're using, please check.
-%
-% Send bug reports to bug-texinfo@gnu.org.  Please include a
-% complete document in each bug report with which we can reproduce the
-% problem.  Patches are, of course, greatly appreciated.
-%
-% To process a Texinfo manual with TeX, it's most reliable to use the
-% texi2dvi shell script that comes with the distribution.  For a simple
-% manual foo.texi, however, you can get away with this:
-%   tex foo.texi
-%   texindex foo.??
-%   tex foo.texi
-%   tex foo.texi
-%   dvips foo.dvi -o  # or whatever; this makes foo.ps.
-% The extra TeX runs get the cross-reference information correct.
-% Sometimes one run after texindex suffices, and sometimes you need more
-% than two; texi2dvi does it as many times as necessary.
-%
-% It is possible to adapt texinfo.tex for other languages, to some
-% extent.  You can get the existing language-specific files from the
-% full Texinfo distribution.
-%
-% The GNU Texinfo home page is https://www.gnu.org/software/texinfo.
-
-
 \message{Loading texinfo [version \texinfoversion]:}
 
 % If in a .fmt file, print the version number
@@ -1094,8 +1041,7 @@ where each line of input produces a line of output.}
       end
     }
     % The -2 in the arguments here gives all the input to TeX catcode 12
-    % (other) or 10 (space), preventing undefined control sequence errors. See
-    % https://lists.gnu.org/archive/html/bug-texinfo/2019-08/msg00031.html
+    % (other) or 10 (space), preventing undefined control sequence errors.
     %
   \endgroup
   \def\pdfescapestring#1{\directlua{PDFescstr('\luaescapestring{#1}')}}
@@ -2363,12 +2309,6 @@ end
 \textfonts            % reset the current fonts
 \rm
 } % end of 11pt text font size definitions, \definetextfontsizexi
-
-
-% Definitions to make the main text be 10pt Computer Modern, with
-% section, chapter, etc., sizes following suit.  This is for the GNU
-% Press printing of the Emacs 22 manual.  Maybe other manuals in the
-% future.  Used with @smallbook, which sets the leading to 12pt.
 %
 \def\definetextfontsizex{%
 % Text fonts (10pt).
@@ -5679,9 +5619,7 @@ might help (with 'rm \jobname.?? \jobname.??s')%
       \parfillskip=0pt plus -1fill
       %
       \advance\rightskip by \entryrightmargin
-      % Determine how far we can stretch into the margin.
-      % This allows, e.g., "Appendix H  GNU Free Documentation License" to
-      % fit on one line in @letterpaper format.
+     
       \ifdim\entryrightmargin>2.1em
         \dimen@i=2.1em
       \else
@@ -7370,11 +7308,8 @@ might help (with 'rm \jobname.?? \jobname.??s')%
 % LaTeX-like @verbatim...@end verbatim and @verb{<char>...<char>}
 % If we want to allow any <char> as delimiter,
 % we need the curly braces so that makeinfo sees the @verb command, eg:
-% `@verbx...x' would look like the '@verbx' command.  --janneke@gnu.org
-%
-% [Knuth]: Donald Ervin Knuth, 1996.  The TeXbook.
-%
-% [Knuth] p.344; only we need to do the other characters Texinfo sets
+% `@verbx...x' would look like the '@verbx' command. 
+% only we need to do the other characters Texinfo sets
 % active too.  Otherwise, they get lost as the first character on a
 % verbatim line.
 \def\dospecials{%
