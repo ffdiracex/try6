@@ -1,3 +1,13 @@
 Every bit of attention this project gains goes to Terry A. Davis, this project is made in his name to keep his legacy alive.
 His work greatly inspired this project, note that this is a hobby project, so there are limitations / cutdowns on performance
-due to a lack of time and resources.
+due to a lack of time and resources. 
+
+Terry Davis inspired the author to persue bare-metal programming and hardware APIs, gaining a sort of need to write everything yourself. Thank you Terry.
+
+NOTE: The author of this project is a certified C++ and C89 developer and an intermediate linux user and developer (in x86 systems), the author is also
+very interested in embedded devices and chips with the experience of writing thousands of lines of x86 assembly AT&T UNIX Style. The author is always learning
+and remains humble, they go by the philosophy of "The more you learn, the less you know of" - since there is always more to learn and an insane amount of code 
+read and implement.
+
+Final note, "Good artists copy; great artists steal" - Steve Jobs.
+
