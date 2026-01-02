@@ -1,4 +1,0 @@
-[NAME]
-holy-mknetdir \- prepare a holy netboot directory.
-[SEE ALSO]
-.BR holy-mkimage (1)

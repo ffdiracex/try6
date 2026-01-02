@@ -1,4 +1,0 @@
-[NAME]
-holy-glue-efi \- generate a fat binary for EFI
-[DESCRIPTION]
-holy-glue-efi processes ia32 and amd64 EFI images and glues them according to Apple format.

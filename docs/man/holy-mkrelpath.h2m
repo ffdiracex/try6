@@ -1,4 +1,0 @@
-[NAME]
-holy-mkrelpath \- make a system path relative to its root
-[SEE ALSO]
-.BR holy-probe (8)

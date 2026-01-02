@@ -1,4 +1,0 @@
-[NAME]
-holy-mkpasswd-pbkdf2 \- generate hashed password for holy
-[SEE ALSO]
-.BR holy-mkconfig (8)

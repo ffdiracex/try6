@@ -1,4 +1,0 @@
-[NAME]
-holy-mkstandalone \- make a memdisk-based holy image
-[SEE ALSO]
-.BR holy-mkimage (1)

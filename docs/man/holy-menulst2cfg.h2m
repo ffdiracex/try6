@@ -1,4 +1,0 @@
-[NAME]
-holy-menulst2cfg \- transform legacy menu.lst into holy.cfg
-[SEE ALSO]
-.BR holy-mkconfig (8)

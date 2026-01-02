@@ -1,6 +1,0 @@
-[NAME]
-holy-mkimage \- make a bootable image of holy
-[SEE ALSO]
-.BR holy-install (8),
-.BR holy-mkrescue (1),
-.BR holy-mknetdir (8)

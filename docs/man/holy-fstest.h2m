@@ -1,4 +1,0 @@
-[NAME]
-holy-fstest \- debug tool for holy filesystem drivers
-[SEE ALSO]
-.BR holy-probe (8)
