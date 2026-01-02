@@ -5,7 +5,7 @@ SUBDIRS = holy-core/gnulib .
 if COND_real_platform
 SUBDIRS += holy-core
 endif
-SUBDIRS += po docs util/bash-completion.d
+SUBDIRS += util/bash-completion.d
 
 include $(top_srcdir)/conf/Makefile.common
 include $(top_srcdir)/conf/Makefile.extra-dist
