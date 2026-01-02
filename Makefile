@@ -1867,7 +1867,7 @@ TEST_LOGS = $(am__test_logs2:.test.log=.log)
 TEST_LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
 TEST_LOG_COMPILE = $(TEST_LOG_COMPILER) $(AM_TEST_LOG_FLAGS) \
 	$(TEST_LOG_FLAGS)
-DIST_SUBDIRS = holy-core/gnulib . holy-core po docs \
+DIST_SUBDIRS = holy-core/gnulib . holy-core  \
 	util/bash-completion.d
 am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.util.am \
 	$(srcdir)/config-util.h.in $(srcdir)/config.h.in \
@@ -1880,8 +1880,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.util.am \
 	$(top_srcdir)/build-aux/missing \
 	$(top_srcdir)/build-aux/test-driver \
 	$(top_srcdir)/conf/Makefile.common \
-	$(top_srcdir)/conf/Makefile.extra-dist ABOUT-NLS AUTHORS \
-	COPYING ChangeLog INSTALL NEWS README THANKS TODO \
+	$(top_srcdir)/conf/Makefile.extra-dist \
 	build-aux/compile build-aux/config.guess \
 	build-aux/config.rpath build-aux/config.sub build-aux/depcomp \
 	build-aux/install-sh build-aux/mdate-sh build-aux/missing \
@@ -2764,7 +2763,7 @@ top_build_prefix =
 top_builddir = .
 top_srcdir = .
 AUTOMAKE_OPTIONS = subdir-objects -Wno-portability
-SUBDIRS = holy-core/gnulib . $(am__append_1) po docs \
+SUBDIRS = holy-core/gnulib . $(am__append_1) \
 	util/bash-completion.d
 CFLAGS_PLATFORM = $(am__append_2) $(am__append_3)
 #LDFLAGS_PLATFORM = -Wl,--wrap=__clear_cache
