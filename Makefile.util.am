@@ -1042,7 +1042,6 @@ gettext_strings_test: $(top_builddir)/config.status tests/gettext_strings_test.i
 	chmod a+x gettext_strings_test
 	
 CLEANFILES += gettext_strings_test
-EXTRA_DIST += po/exclude.pot 
 dist_noinst_DATA += tests/gettext_strings_test.in 
 check_SCRIPTS += pata_test
 TESTS += pata_test
