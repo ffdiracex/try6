@@ -3001,7 +3001,7 @@ EXTRA_DIST = autogen.sh geninit.sh gentpl.py Makefile.util.def \
 	tests/syslinux/ubuntu10.04_holy.cfg.in $(am__append_59) \
 	$(am__append_63) $(am__append_67) $(am__append_71) \
 	$(am__append_75) $(am__append_79) $(am__append_83) \
-	$(am__append_87) po/exclude.pot util/garbage-gen.c \
+	$(am__append_87) util/garbage-gen.c \
 	$(starfield_theme_files) \
 	$(srcdir)/themes/starfield/src/slider_s.xcf \
 	$(srcdir)/themes/starfield/src/slider_n.xcf \
