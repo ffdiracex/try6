@@ -7,6 +7,11 @@
 
 THIS IS THE PROJECT OF HOLYBOOTER
 
+THE AUTHOR HAS SPENT COUNTLESS HOURS AND DAYS WRITING FIRMWARE CODE, READING MANUALS AND BUILDING THE API
+
+
+
+
                    .-------.
                     |(~\o/~)|
                   _.||\/X\/||._                 IN LOVING MEMORY OF THE LEGENDARY
