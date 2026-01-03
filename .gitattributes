@@ -1,0 +1,19 @@
+# Explicitly define languages we want counted
+*.c     linguist-language=C
+*.h     linguist-language=C
+*.S     linguist-language=Assembly
+*.sh    linguist-language=Shell
+*.m4    linguist-language=M4
+
+Makefile        linguist-language=Makefile
+makefile        linguist-language=Makefile
+Makefile.*      linguist-language=Makefile
+
+*.pp    linguist-vendored
+*.def   linguist-vendored
+*.in    linguist-vendored
+*.yy    linguist-vendored
+
+# If you have generated files
+*.tab.c     linguist-generated
+*.lex.c     linguist-generated
